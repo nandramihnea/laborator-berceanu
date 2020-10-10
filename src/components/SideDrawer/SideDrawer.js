@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import classes from './Sidebar.module.css';
+import classes from './SideDrawer.module.css';
 
-const Sidebar = () => {
+const SideDrawer = (props) => {
+    let sideDrawerStatus = props.closed ? 'closed' : 'open';
+
     return (
-        <div className={classes.sidebar + " bg-yellow-200 p-6"}>
+        <div className={[classes.sideDrawer, sideDrawerStatus, "bg-yellow-200 p-6"].join(' ')}>
             <Link to="/acreditari">Acreditari</Link>
             <Link to="/contact">Contact</Link>
             <Link to="/lista-preturi">Lista Preturi</Link>
@@ -13,4 +15,4 @@ const Sidebar = () => {
     )
 }
 
-export default Sidebar;
+export default SideDrawer;
