@@ -1,17 +1,27 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import './App.css';
-
+import Acreditari from './components/Acreditari/Acreditari';
+import Contact from './components/Contact/Contact';
+import ListaPreturi from './components/ListaPreturi/ListaPreturi';
 import Layout from './components/Layout/Layout';
-import Sidebar from './components/Sidebar/Sidebar';
 
-const App = (props) => {
+const App = () => {
+  let routes = (
+    <Switch>
+      <Route path="/acreditari" component={Acreditari} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/lista-preturi" component={ListaPreturi} />
+    </Switch>
+  )
+
   return (
-    <div className="App">
-      <Layout>
-        <Sidebar />
-        {props.children}
+    <BrowserRouter>
+      <Layout> 
+        {routes}
       </Layout>
-    </div>
+    </BrowserRouter>
   );
 }
 
