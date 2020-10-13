@@ -12,7 +12,6 @@ const Layout = (props) => {
         <div className={classes.layout}>
             <SideDrawer closed={sideDrawerClosed}/>
             <main>
-                <button className='p-2 bg-red-400' onClick={toggleSideDrawerClosed}>Close Sidebar</button>
                 {props.children}
             </main>
         </div>
