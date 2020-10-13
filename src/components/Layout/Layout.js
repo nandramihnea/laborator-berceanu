@@ -11,7 +11,7 @@ const Layout = (props) => {
     return (
         <div className={classes.layout}>
             <SideDrawer/>
-            <main>
+            <main className='p-10'>
                 {props.children}
             </main>
         </div>

@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './App.css';
+import './typography.css';
+
 import Acreditari from './components/Acreditari/Acreditari';
 import Contact from './components/Contact/Contact';
 import ListaPreturi from './components/ListaPreturi/ListaPreturi';
@@ -18,7 +20,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Layout> 
+      <Layout>
         {routes}
       </Layout>
     </BrowserRouter>
