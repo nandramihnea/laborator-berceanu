@@ -1,8 +1,8 @@
 .layout {
     height: 100vh;
     display: grid;
-    align-content: space-between;
-    background-image: url('../../assets/images/lab1.jpg');
+    grid-template-rows: 1fr min-content;
+    background-image: linear-gradient(180deg, rgba(99,146,26,0.5) 0%, rgba(171,219,94,0.7) 55%, rgba(242,253,224,1) 100%), url('../../assets/images/lab1.jpg');
     background-size: cover;
 }
 

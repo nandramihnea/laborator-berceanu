@@ -20,7 +20,7 @@ const Layout = (props) => {
             </main>
             <footer className={classes.footer}>
                 <img className="cursor-pointer" src={logo} alt="logo" onClick={handleClick} />
-                <span className={classes.copyright + " caption text-neutral-3"}>© 2020 Laborator Berceanu</span>
+                <span className={classes.copyright + " caption text-primary-7"}>© 2020 Laborator Berceanu</span>
             </footer>
         </div>
     )
