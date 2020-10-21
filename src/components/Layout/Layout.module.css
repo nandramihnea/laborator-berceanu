@@ -1,8 +1,18 @@
 .layout {
+    height: 100vh;
     display: grid;
-    grid-template-columns: 300px 1fr;
+    align-content: space-between;
+    background-image: url('../../assets/images/lab1.jpg');
+    background-size: cover;
 }
 
-.main {
+.footer {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+}
 
+.copyright {
+    height: min-content;
+    align-self: end;
+    justify-self: end;
 }
