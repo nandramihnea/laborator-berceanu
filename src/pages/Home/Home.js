@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import Card from '../../components/Card/Card';
 
-import { ReactComponent as Certification } from '../../assets/icons/certificate.svg';
+import { ReactComponent as Acreditari } from '../../assets/icons/certificate.svg';
 import { ReactComponent as Contact } from '../../assets/icons/contact.svg';
-import { ReactComponent as Price } from '../../assets/icons/tag.svg';
+import { ReactComponent as ListaPreturi } from '../../assets/icons/tag.svg';
 
 import classes from './Home.module.css';
 
@@ -16,13 +16,13 @@ const Home = () => {
                 <Card>
                     <Link to='/acreditari' className={classes.link + " grid items-center p-8"} >
                         <Fragment>
-                            <Certification />
+                            <Acreditari />
                             <span>Acreditările laboratorului</span>
                         </Fragment>
                     </Link>
                 </Card>
                 <Card>
-                    <Link to='/lista-preturi' className={classes.link + " grid items-center p-8"} >
+                    <Link to='/contact' className={classes.link + " grid items-center p-8"} >
                         <Fragment>
                             <Contact />
                             <span>Contact</span>
@@ -30,9 +30,9 @@ const Home = () => {
                     </Link>
                 </Card>
                 <Card>
-                    <Link to='/contact' className={classes.link + " grid items-center p-8"} >
+                    <Link to='/lista-preturi' className={classes.link + " grid items-center p-8"} >
                         <Fragment>
-                            <Price />
+                            <ListaPreturi />
                             <span>Lista de prețuri</span>
                         </Fragment>
                     </Link>
