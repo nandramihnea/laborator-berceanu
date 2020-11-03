@@ -1,4 +1,17 @@
 .layout {
+    height: 100vh;
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr min-content;
+    background: linear-gradient(180deg, rgba(99,146,26,0.5) 0%, rgba(171,219,94,0.7) 55%, rgba(242,253,224,1) 100%);
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+}
+
+.copyright {
+    height: min-content;
+    align-self: end;
+    justify-self: end;
 }

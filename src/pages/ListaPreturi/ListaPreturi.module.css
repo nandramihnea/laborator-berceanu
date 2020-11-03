@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    row-gap: 30px;
+}
+
+.header {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.list {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    align-items: start;
+}

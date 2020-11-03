@@ -1,0 +1,9 @@
+.links {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.link {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+}

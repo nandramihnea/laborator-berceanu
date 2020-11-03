@@ -2,14 +2,18 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './App.css';
-import Acreditari from './components/Acreditari/Acreditari';
-import Contact from './components/Contact/Contact';
-import ListaPreturi from './components/ListaPreturi/ListaPreturi';
+import './typography.css';
+
+import Acreditari from './pages/Acreditari/Acreditari';
+import Contact from './pages/Contact/Contact';
+import ListaPreturi from './pages/ListaPreturi/ListaPreturi';
 import Layout from './components/Layout/Layout';
+import Home from './pages/Home/Home';
 
 const App = () => {
   let routes = (
     <Switch>
+      <Route exact path="/" component={Home} />
       <Route path="/acreditari" component={Acreditari} />
       <Route path="/contact" component={Contact} />
       <Route path="/lista-preturi" component={ListaPreturi} />
@@ -18,7 +22,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Layout> 
+      <Layout>
         {routes}
       </Layout>
     </BrowserRouter>
