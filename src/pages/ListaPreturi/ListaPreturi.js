@@ -1,31 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ReactTooltip from "react-tooltip";
 
 import {analyzes} from '../../assets/listaPreturi';
+import Calculator from './Calculator/Calculator';
 
 import classes from './ListaPreturi.module.css';
 
 const ListaPreturi = () => {
-    const obj = {
-        1: 'Decontat cu trimitere de la Medicul de Familie',
-        2: 'Decontat cu trimitere de la Medicul Specialist',
-        3: 'Decontat cu trimitere de la Medicul de Familie sau Medicul Specialist',
-        4: 'Decontat cu trimitere de la Medicul de Familie (in cazul femeilor gravide) sau Medicul Specialist',
+    const [selectedElement, setSelectedElement] = useState({});
+
+    const mask = {
+        1: "Analiză decontată în baza biletului de trimitere de la medicul de familie",
+        2: "Analiză decontată în baza biletului de trimitere de la medicul specialist",
+        3: "Analiză decontată în baza biletului de trimitere de la medicul de familie sau de la medicul specialist",
+        4: "Analiză decontată în baza biletului de trimitere de la medicul de familie (doar pentru femeile gravide) sau de la medicul specialist",
+        5: "Microalbuminuria (albumina urinară) și Creatinina urinară = Investigații paraclinice ce pot fi recomandate de medicii de familie, pentru asigurații care au evidențiat pe biletul de trimitere pentru investigații paraclinice management de caz pentru HTA, dislipidemie, diabet zaharat tip 2, astm bronşic, boala cronică respiratorie obstructivă (BPOC) și boala cronică de rinichi, după caz."
+    }
+
+    const onElementClickHandler = (analyze) => {
+        setSelectedElement(analyze)
     }
 
     const priceList = analyzes.map(type => {
         let content = (
-            <div key={type.name} className={classes.list}>
-                <h3 className={classes.header + ' mr-5'}>{type.name}</h3>
+            <div key={type.name} className={classes.list + ' mt-8'}>
+                <h3 className={classes.header + ' mr-8'}>{type.name}</h3>
                 <div>
                     {type.analyzes.map(analyze => {
                         let row = (
-                            <div key={analyze.id} className={classes.row}>
-                                <p>{analyze.name}</p>
-                                <span>{obj[analyze.status]}</span>
-                                <div className="grid grid-cols-2 gap-x-1 text-right">
-                                    <span>{analyze.price}</span>
-                                    <span>Lei</span>
-                                </div>
+                            <div
+                                data-tip={mask[analyze.status]}
+                                data-for="tooltip"
+                                key={analyze.id}
+                                onClick={() => onElementClickHandler(analyze)}
+                                className={classes.row + ' gap-x-3 mb-2 hover:text-primary-5'}>
+                                    <p>{analyze.name}</p>
+                                    <div className={classes.price + " grid gap-x-1 text-right"}>
+                                        <span>{analyze.price}</span>
+                                        <span>Lei</span>
+                                    </div>
                             </div>
                         )
                         return row;
@@ -38,7 +51,17 @@ const ListaPreturi = () => {
 
     return (
         <div className={classes.container}>
-            {priceList}
+            <div>
+                {priceList}
+            </div>
+            <ReactTooltip
+                className={classes.tooltip}
+                id="tooltip"
+                place="top"
+                type="light" />
+            <Calculator
+                selectedElement={selectedElement}
+                analyzes={analyzes} />
         </div>
     )
 }

@@ -1,0 +1,7 @@
+.container {
+    max-width: 50vw;
+}
+
+.row {
+    grid-template-columns: 1fr min-content;
+}

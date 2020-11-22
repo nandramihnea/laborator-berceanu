@@ -1,11 +1,29 @@
 .container {
     display: grid;
-    row-gap: 30px;
+    grid-template-columns: repeat(2, minmax(364px, 1fr));
+    column-gap: 50px;
 }
 
 .header {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
+    transition: all 0.7s ease-out;
+    cursor: pointer;
+    max-height: 350px;
+    width: 50px;
+}
+
+.header:after {
+    content: '';
+    height: 30%;
+    width: 3px;
+    display: block;
+    transition: all 0.7s ease-out;
+    background-color: #27241D;
+}
+
+.header:hover:after {
+    height: 100%;
 }
 
 .list {
@@ -16,5 +34,19 @@
 
 .row {
     display: grid;
-    grid-template-columns: repeat(2, minmax(150px, 400px)) max-content;
+    grid-template-columns: minmax(0, 500px) max-content;
+    max-width: 65ch;
+}
+
+.row>p:hover,
+.price:hover {
+    cursor: pointer;
+}
+
+.price {
+    grid-template-columns: repeat(2, min-content);
+}
+
+.tooltip {
+    max-width: 36ch;
 }
