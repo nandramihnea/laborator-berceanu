@@ -1,7 +1,7 @@
 .container {
     display: grid;
-    grid-template-columns: repeat(2, minmax(364px, 1fr));
-    column-gap: 50px;
+    grid-template-columns: repeat(2, minmax(364px, 550px));
+    column-gap: 100px;
 }
 
 .header {
@@ -11,6 +11,9 @@
     cursor: pointer;
     max-height: 350px;
     width: 50px;
+    position: sticky;
+    align-self: start;
+    top: 50px;
 }
 
 .header:after {
@@ -18,7 +21,7 @@
     height: 30%;
     width: 3px;
     display: block;
-    transition: all 0.7s ease-out;
+    transition: all 0.3s ease-out;
     background-color: #27241D;
 }
 
@@ -49,4 +52,5 @@
 
 .tooltip {
     max-width: 36ch;
+    text-align: justify;
 }

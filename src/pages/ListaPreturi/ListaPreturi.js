@@ -18,15 +18,15 @@ const ListaPreturi = () => {
     }
 
     const onElementClickHandler = (analyze) => {
-        setSelectedElement(analyze)
+        setSelectedElement(analyze);
     }
 
     const priceList = analyzes.map(type => {
         let content = (
             <div key={type.name} className={classes.list + ' mt-8'}>
-                <h3 className={classes.header + ' mr-8'}>{type.name}</h3>
+                <h3 className={classes.header + ' small mr-8'}>{type.name}</h3>
                 <div>
-                    {type.analyzes.map(analyze => {
+                    {type.analyzes.map((analyze) => {
                         let row = (
                             <div
                                 data-tip={mask[analyze.status]}
