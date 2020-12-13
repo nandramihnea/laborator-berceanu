@@ -12,6 +12,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-tooltip": "^4.2.10",
     "tailwindcss": "^1.8.10"
   },
   "scripts": {

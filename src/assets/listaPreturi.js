@@ -1,5 +1,21 @@
 export const analyzes = [
   {
+    "name": "EXTRA",
+    "isFullRow": true,
+    "analyzes": [
+      {
+        "id": 1,
+        "name": "Deplasare la domiciliu (fără transport)",
+        "price": 50
+      },
+      {
+        "id": 2,
+        "name": "Recoltare",
+        "price": 8
+      }
+    ]
+  },
+  {
     "name": "HEMATOLOGIE/COAGULARE",
     "isFullRow": true,
     "analyzes": [
@@ -139,7 +155,7 @@ export const analyzes = [
         "id": 24,
         "name": "Proteine serice totale",
         "status": 3,
-        "price": 12
+        "price": 12 
       },
       {
         "id": 25,
@@ -252,7 +268,7 @@ export const analyzes = [
         "id": 43,
         "name": "IgG",
         "status": 2,
-        "price":25
+        "price":25 
       },{
         "id": 44,
         "name": "IgM",
@@ -367,5 +383,462 @@ export const analyzes = [
         "price": 55
       }
     ]
+  },
+  {
+    "name": "EXUDAT FARINGIAN",
+    "isFullRow": true,
+    "analyzes": [
+      {
+        "id": 63,
+        "name": "Examen bacteriologic exudat faringian",
+        "status": 3,
+        "price": 45
+      },
+      {
+        "id": 64,
+        "name": "Examen fungic exudat faringian",
+        "status": 3,
+        "price": 25
+      }
+    ]
+  },
+  {
+    "name": "EXAMEN URINĂ",
+    "isFullRow": true,
+    "analyzes": [
+      {
+        "id": 65,
+        "name": "Examen complet de urină (sumar + sediment)",
+        "status": 3,
+        "price": 30
+      },
+      {
+        "id": 66,
+        "name": "Urocultură",
+        "status": 3,
+        "price": 45
+      },
+      {
+        "id": 67,
+        "name": "Examen fungic urină",
+        "status": 3,
+        "price": 25
+      },
+      {
+        "id": 68,
+        "name": "Dozare glucoză urinară",
+        "status": 3,
+        "price": 25
+      },
+      {
+        "id": 69,
+        "name": "Dozare proteine urinare",
+        "status": 3,
+        "price": 25
+      },
+      {
+        "id": 70,
+        "name": "Microalbuminuria (albumina urinară)",
+        "status": 5,
+        "price": 30
+      },
+      {
+        "id": 71,
+        "name": "Creatinină urinară",
+        "status": 5,
+        "price": 25
+      }
+    ]
+  },
+  {
+    "name": "EXAMENE MATERII FECALE",
+    "isFullRow": true,
+    "analyzes": [
+      {
+        "id": 72,
+        "name": "Examen coproparazitologic",
+        "status": 3,
+        "price": 20
+      },
+      {
+        "id": 73,
+        "name": "Coprocultură",
+        "status": 3,
+        "price": 45
+      },
+      {
+        "id": 74,
+        "name": "Examen micologic materii fecale",
+        "status": 2,
+        "price": 25
+      },
+      {
+        "id": 75,
+        "name": "Depistare hemoragii oculte",
+        "status": 3,
+        "price": 35
+      },
+      {
+        "id": 76,
+        "name": "Antigen Helicobacter pylori (materii fecale)",
+        "status": 3,
+        "price": 55
+      },
+    ]
+  },
+  {
+    "name": "EXUDAT NAZAL",
+    "isFullRow": true,
+    "analyzes": [
+      {
+        "id": 77,
+        "name": "Examen bacteriologic din secreții nazale",
+        "status": 3,
+        "price": 45
+      },
+      {
+        "id": 78,
+        "name": "Examen fungic din secreții nazale",
+        "status": 3,
+        "price": 25
+      }
+    ]
+  },
+  {
+    "name": "EXAMENE SECREŢII VAGINALE",
+    "isFullRow": true,
+    "analyzes": [
+      {
+        "id": 79,
+        "name": "Examen Babeş-Papanicolau",
+        "status": 3,
+        "price": 50
+      },
+      {
+        "id": 80,
+        "name": "Examene din secreții vaginale – examene bacteriene",
+        "status": 2,
+        "price": 55
+      },
+      {
+        "id": 81,
+        "name": "Examene din secreții vaginale – examene fungice",
+        "status": 2,
+        "price": 25
+      }
+    ]
+  },
+  {
+    "name": "EXAMENE SECREŢII URETRALE, OTICE, CONJUNCTIVALE ŞI COLECȚIE PURULENTĂ",
+    "isFullRow": true,
+    "analyzes": [
+      {
+        "id": 82,
+        "name": "Examene din secreţii uretrale/otice/conjunctivale şi colecție purulentă – examene bacteriene",
+        "status": 3,
+        "price": 55
+      },
+      {
+        "id": 83,
+        "name": "Examene din secreţii uretrale/otice/conjunctivale şi colecție purulentă – examene fungice",
+        "status": 2,
+        "price": 25
+      }
+    ]
+  },
+  {
+    "name": "ANALIZE NEDECONTATE DE CAS",
+    "isFullRow": true,
+    "analyzes": [
+      {
+        "id": 84,
+        "name": "Acid uric urinar",
+        "price": 20
+      },
+      {
+        "id": 85,
+        "name": "AFP (alfa fetoproteina)",
+        "price": 50
+      },
+      {
+        "id": 86,
+        "name": "Amilazemie",
+        "price": 25
+      },
+      {
+        "id": 87,
+        "name": "Amilazurie",
+        "price": 25
+      },
+      {
+        "id": 88,
+        "name": "Anticorpi anti – tiroglobulină",
+        "price": 50
+      },
+      {
+        "id": 89,
+        "name": "Anticorpi heterofili asociaţi mononucleozei infecţioase",
+        "price": 35
+      },
+      {
+        "id": 90,
+        "name": "Ac anti - Helicobacter pylori – calitativ",
+        "price": 40
+      },
+      {
+        "id": 91,
+        "name": "Ac anti - Helicobacter pylori – cantitativ",
+        "price": 50
+      },
+      {
+        "id": 92,
+        "name": "Ac anti – HAV IgG",
+        "price": 45
+      },
+      {
+        "id": 93,
+        "name": "Ac anti  - HBc totali ",
+        "price": 45
+      },
+      {
+        "id": 94,
+        "name": "Ac  anti – HBc  IgM",
+        "price": 45
+      },
+      {
+        "id": 95,
+        "name": "Ac  anti - HBs",
+        "price": 45
+      },
+      {
+        "id": 96,
+        "name": "Ac anti - HBe",
+        "price": 45
+      },
+      {
+        "id": 97,
+        "name": "Ac anti DNP – Lupus Eritematos Sistemic",
+        "price": 40
+      },
+      {
+        "id": 98,
+        "name": "Ag HBe",
+        "price": 45
+      },
+      {
+        "id": 99,
+        "name": "Antigen Giardia lamblia din materii fecale",
+        "price": 50
+      },
+      {
+        "id": 100,
+        "name": "Antigen streptococ β hemolitic de grup A din secreție faringiană",
+        "price": 50
+      },
+      {
+        "id": 101,
+        "name": "Antigen Chlamydia trachomatis (secreție col uterin, secreție uretrală)",
+        "price": 50
+      },
+      {
+        "id": 102,
+        "name": "ASLO (cantitativ)",
+        "price": 35
+      },
+      {
+        "id": 103,
+        "name": "Βeta hCG",
+        "price": 50
+      },
+      {
+        "id": 104,
+        "name": "CA125",
+        "price": 50
+      },
+      {
+        "id": 105,
+        "name": "CA15-3",
+        "price": 50
+      },
+      {
+        "id": 106,
+        "name": "CA19-9",
+        "price": 50
+      },
+      {
+        "id": 107,
+        "name": "Calcitonina",
+        "price": 60
+      },
+      {
+        "id": 108,
+        "name": "Cytomegalovirus IgM / IgG",
+        "price": 100
+      },
+      {
+        "id": 109,
+        "name": "Calciu urinar",
+        "price": 25
+      },
+      {
+        "id": 110,
+        "name": "Calprotectina",
+        "price": 130
+      },
+      {
+        "id": 111,
+        "name": "CEA (antigen carcinoembrionar)",
+        "price": 50
+      },
+      {
+        "id": 112,
+        "name": "Clearance creatinină",
+        "price": 30
+      },
+      {
+        "id": 113,
+        "name": "Colinesterază",
+        "price": 30
+      },
+      {
+        "id": 114,
+        "name": "Examen bacteriologic din: spută, secreție plagă, lichid de puncție, depozit lingual, col uterin, aspirat bronşic, spermă, etc. ",
+        "price": 55
+      },
+      {
+        "id": 115,
+        "name": "Examen fungic din: spută, secreție plagă, lichid de puncție, depozit lingual, col uterin, aspirat bronşic, spermă, etc",
+        "price": 25
+      },
+      {
+        "id": 116,
+        "name": "Depistare droguri în urină (screening)",
+        "price": 120
+      },
+      {
+        "id": 117,
+        "name": "DHEA-S",
+        "price": 55
+      },
+      {
+        "id": 118,
+        "name": "Factor reumatoid (cantitativ)",
+        "price": 35
+      },
+      {
+        "id": 119,
+        "name": "Folați",
+        "price": 50
+      },
+      {
+        "id": 120,
+        "name": "FT3",
+        "price": 40
+      },
+      {
+        "id": 121,
+        "name": "Hemoglobina glicozilată",
+        "price": 42
+      },
+      {
+        "id": 122,
+        "name": "Ig E specific BASIC – 27 alergeni",
+        "price": 220
+      },
+      {
+        "id": 123,
+        "name": "Ig E specific RESPIRATOR – 20 alergeni",
+        "price": 220
+      },
+      {
+        "id": 124,
+        "name": "LDH",
+        "price": 25
+      },
+      {
+        "id": 125,
+        "name": "Lipaza",
+        "price": 25
+      },
+      {
+        "id": 126,
+        "name": "Lipide serice totale",
+        "price": 25
+      },
+      {
+        "id": 127,
+        "name": "Potasiu urinar (K U)",
+        "price": 20
+      },
+      {
+        "id": 128,
+        "name": "Proteina C reactivă (CRP), (cantitativ)",
+        "price": 35
+      },{
+        "id": 129,
+        "name": "Rotavirus / Adenovirus din materiile fecale",
+        "price": 50
+      },{
+        "id": 130,
+        "name": "Rubeola IgM / IgG",
+        "price": 100
+      },{
+        "id": 131,
+        "name": "Sediment Addis",
+        "price": 30
+      },{
+        "id": 132,
+        "name": "Sodiu urinar (Na U)",
+        "price": 20
+      },{
+        "id": 133,
+        "name": "Timp de sângerare",
+        "price": 21
+      },{
+        "id": 134,
+        "name": "Timp de coagulare",
+        "price": 21
+      },{
+        "id": 135,
+        "name": "Tiroglobulină",
+        "price": 55
+      },{
+        "id": 136,
+        "name": "Teste de disproteinemie (tymol)",
+        "price": 10
+      },{
+        "id": 137,
+        "name": "Toxoplasmoza IgM / IgG",
+        "price": 100
+      },{
+        "id": 138,
+        "name": "TORCH profil ( TOXO+CMV+RUBEOLA)",
+        "price": 270
+      },{
+        "id": 139,
+        "name": "TTG (test de toleranţă la glucoză)",
+        "price": 45
+      },{
+        "id": 140,
+        "name": "T3",
+        "price": 40
+      },{
+        "id": 141,
+        "name": "T4",
+        "price": 40
+      },{
+        "id": 142,
+        "name": "Uree urinară",
+        "price": 20
+      },{
+        "id": 143,
+        "name": "Vitamina B12",
+        "price": 50
+      },{
+        "id": 144,
+        "name": "Vitamina D3",
+        "price": 130
+      }
+    ]
   }
-];
+]
