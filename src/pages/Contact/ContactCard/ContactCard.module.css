@@ -1,0 +1,51 @@
+.card {
+    display: grid;
+}
+
+.cardDetails {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 36px;
+    padding-top: 78px;
+}
+
+.button {
+    color: white;
+}
+
+.header {
+    cursor: pointer;
+    width: max-content;
+}
+
+.header:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 40%;
+    height: 2px;
+    display: block;
+    margin-top: 10px;
+    transition: all 0.5s ease-out;
+    background-color: #27241D;
+}
+
+.header:hover:after {
+    width: 100%;
+}
+
+.input {
+    background: transparent;
+    line-height: normal;
+    border-bottom: 1px dashed #27241D;;
+}
+
+.input:focus {
+    outline: 0;
+}
+
+.textarea {
+    resize: none;
+    width: 100px;
+    height: 100px;
+}
