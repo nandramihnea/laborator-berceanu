@@ -1,7 +1,5 @@
 import React from 'react';
 
-import classes from './Contact.module.css';
-
 import Borzesti from './Borzesti/Borzesti';
 import Teiului from './Teiului/Teiului';
 

@@ -5,6 +5,7 @@ import {analyzes} from '../../assets/listaPreturi';
 import Calculator from './Calculator/Calculator';
 
 import classes from './ListaPreturi.module.css';
+import ProgressBar from './ProgressBar/ProgressBar';
 
 const ListaPreturi = () => {
     const [selectedElement, setSelectedElement] = useState({});
@@ -51,6 +52,7 @@ const ListaPreturi = () => {
 
     return (
         <div className={classes.container}>
+            <ProgressBar />
             <div>
                 {priceList}
             </div>
