@@ -68,8 +68,8 @@ p,
 .huge-font {
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
-    font-size: 120px;
-    line-height: 120px;
+    font-size: 56px;
+    line-height: 60px;
 }
 
 .bold {
@@ -86,4 +86,12 @@ p,
 
 .light-weight {
     font-weight: 300 !important;
+}
+
+.josephin {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.raleway {
+    font-family: 'Raleway', sans-serif;
 }
