@@ -14,11 +14,11 @@ const Layout = (props) => {
     }
 
     return (
-        <div className={classes.layout + ' p-10'}>
-            <main>
+        <div className={classes.layout}>
+            <main className='p-10'>
                 {props.children}
             </main>
-            <footer className={classes.footer}>
+            <footer className={classes.footer + ' p-10'}>
                 <img className="cursor-pointer" src={logo} alt="logo" onClick={handleClick} />
                 <span className={classes.copyright + " caption text-primary-7"}>© 2020 Laborator Berceanu</span>
             </footer>
