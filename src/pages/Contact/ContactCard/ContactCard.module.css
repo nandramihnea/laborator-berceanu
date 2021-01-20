@@ -1,5 +1,6 @@
 .card {
     display: grid;
+    background: linear-gradient(0deg, #FACDCD 65%, transparent 100%);
 }
 
 .cardDetails {
@@ -48,4 +49,39 @@
     resize: none;
     width: 100px;
     height: 100px;
+}
+
+/* animations */
+
+.contact-card-appear {
+    opacity: 0;
+    z-index: 1;
+}
+
+.contact-card-appear.contact-card-appear-active {
+    opacity: 1;
+    transition: opacity 300ms linear;
+}
+
+.contact-card-enter {
+    opacity: 0;
+    z-index: 1;
+}
+
+.contact-card-enter.contact-card-enter-active {
+    opacity: 1;
+    transition: opacity 300ms linear;
+}
+
+.contact-card-exit {
+    opacity: 1;
+}
+
+.contact-card-exit.contact-card-exit-active {
+    opacity: 0;
+    transition: opacity 300ms linear;
+}
+
+.contact-card-exit-done {
+    opacity: 0;
 }

@@ -1,0 +1,47 @@
+.hero {
+    display: flex;
+    height: 100%;
+}
+
+.teiului {
+    background: url('../../assets/images/1.jpg');
+}
+
+.borzesti {
+    background: url('../../assets/images/2.jpg');
+}
+
+.teiului,
+.borzesti {
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(1);
+    position: relative;
+    flex: 1;
+    transition: all 0.5s;
+}
+
+.teiului:hover,
+.borzesti:hover {
+    filter: none;
+    cursor: pointer;
+    flex: 2;
+}
+
+.teiului:after,
+.borzesti:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.borzesti:hover:after,
+.teiului:hover:after {
+    opacity: 0;
+}

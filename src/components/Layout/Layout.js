@@ -15,7 +15,7 @@ const Layout = (props) => {
 
     return (
         <div className={classes.layout}>
-            <main className='p-10'>
+            <main>
                 {props.children}
             </main>
             <footer className={classes.footer + ' p-10'}>
