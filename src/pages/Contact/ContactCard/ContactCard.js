@@ -1,17 +1,32 @@
 import React from 'react';
 
+import { motion } from "framer-motion";
+
 import classes from './ContactCard.module.css';
-import ReactCSSTransitionGroup from 'react-transition-group';
 
 import { ReactComponent as Telephone } from '../../../assets/icons/smartphone.svg';
 import { ReactComponent as Mail } from '../../../assets/icons/mail.svg';
 import { ReactComponent as Location } from '../../../assets/icons/placeholder.svg';
 
 const ContactCard = (props) => {
+    const contactVariants = {
+        hidden: {
+            scaleY: 0
+        },
+        visible: {
+            scaleY: 1,
+            transition: {
+                duration: 0.3
+            }
+        }
+    };
+
     return (
-        <ReactCSSTransitionGroup
-        >
-            <div className={classes.card}>
+        <motion.div
+            className={classes.card}
+            variants={contactVariants}
+            initial='hidden'
+            animate='visible' >
                 <div className={classes.cardDetails}>
                     <div className='grid justify-center items-baseline'>
                         <Telephone  className='justify-self-center mb-8'/>
@@ -28,8 +43,7 @@ const ContactCard = (props) => {
                         <a href={props.mapCode} >{props.address}</a>
                     </div>
                 </div>
-            </div>
-        </ReactCSSTransitionGroup>
+        </motion.div>
     )
 };
 
