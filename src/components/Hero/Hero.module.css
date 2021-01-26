@@ -11,6 +11,11 @@
     background: url('../../assets/images/2.jpg');
 }
 
+.delimiter {
+    width: 10px;
+    height: 100%;
+}
+
 .teiului,
 .borzesti {
     background-size: cover;

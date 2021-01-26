@@ -15,8 +15,9 @@ const ContactCard = (props) => {
         },
         visible: {
             scaleY: 1,
+            originY: 'bottom',
             transition: {
-                duration: 0.3
+                duration: 0.4
             }
         }
     };
@@ -27,7 +28,7 @@ const ContactCard = (props) => {
             variants={contactVariants}
             initial='hidden'
             animate='visible' >
-                <div className={classes.cardDetails}>
+                <div className={classes.cardDetails + ' pt-20'}>
                     <div className='grid justify-center items-baseline'>
                         <Telephone  className='justify-self-center mb-8'/>
                         <button>
