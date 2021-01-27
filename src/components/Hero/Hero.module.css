@@ -29,7 +29,6 @@
 .teiului:hover,
 .borzesti:hover {
     filter: none;
-    cursor: pointer;
     flex: 1.5;
 }
 

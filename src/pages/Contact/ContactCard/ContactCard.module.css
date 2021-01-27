@@ -1,6 +1,6 @@
 .card {
     display: grid;
-    background: linear-gradient(0deg, #FAF9F7 65%, transparent 100%);
+    background: linear-gradient(0deg, #FFEEEE 20%, #FAF9F7 75%, transparent 100%);
 }
 
 .cardDetails {
