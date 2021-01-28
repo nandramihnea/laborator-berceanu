@@ -34,7 +34,7 @@ const ContactCard = (props) => {
                         className='grid justify-center items-baseline cursor-pointer'>
                             <motion.div
                                 className='justify-self-center mb-8'
-                                whileHover={{rotateZ: [0, 20, -20, 20, -20, 0]}}
+                                whileHover={{rotateZ: [0, 15, -15, 15, -15, 0]}}
                                 transition={{duration: 0.3}}>
                                     <Telephone/>
                             </motion.div>
