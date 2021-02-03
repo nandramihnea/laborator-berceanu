@@ -43,6 +43,7 @@ const ContactCard = (props) => {
         },
         hovered: {
             scale: 1.2,
+            textShadow: '3px 1px 3px rgba(226, 247, 194, 0.77)',
             originX: 'left'
         }
     }
@@ -57,17 +58,36 @@ const ContactCard = (props) => {
                     <motion.div
                         className={classes.container}
                         variants={ctaVariants} >
-                            <div className={classes.content + ' pl-6 pb-10 grid'}>
+                            <div className={classes.content + ' grid'}>
                                 <motion.a
                                     href={`tel:${props.phone}`}
-                                    className="bold text-xl md:text-sm tracking-wide text-primary-4 w-max"
+                                    className="bold text-2xl md:text-sm font-bold text-primary-4 w-max"
                                     variants={aVariants}
                                     initial="visible"
                                     whileHover="hovered" >
                                         SUNĂ
                                 </motion.a>
-                                <a href={`mailto:${props.email}`} className="bold text-xl md:text-sm tracking-wide text-primary-4 w-max">SCRIE <span className="text-base md:text-xs normal-weight text-neutral-9">sau</span></a>
-                                <a href={props.mapCode} target="_blank" rel="noopener noreferrer" className="bold text-xl md:text-sm tracking-wide text-primary-4 w-max">VIZITEAZĂ-NE</a>
+                                <div className="flex items-baseline w-max">
+                                    <motion.a
+                                        href={`mailto:${props.email}`}
+                                        className="bold text-2xl md:text-sm font-bold text-primary-4 mr-3"
+                                        variants={aVariants}
+                                        initial="visible"
+                                        whileHover="hovered" >
+                                            SCRIE
+                                    </motion.a>
+                                    <span className="text-lg md:text-xs normal-weight text-neutral-9">sau</span>
+                                </div>
+                                <motion.a
+                                    href={props.mapCode}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bold text-2xl md:text-sm font-bold text-primary-4 w-max"
+                                    variants={aVariants}
+                                    initial="visible"
+                                    whileHover="hovered" >
+                                        VIZITEAZĂ-NE
+                                </motion.a>
                             </div>
                     </motion.div>
                     {/* <a

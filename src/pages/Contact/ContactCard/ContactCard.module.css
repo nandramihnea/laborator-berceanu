@@ -1,15 +1,17 @@
 .card {
     display: grid;
-    background: linear-gradient(0deg, rgba(255, 238, 238, .94) 20%, rgba(255, 238, 238, .94) 75%, transparent 100%);
 }
 
 .cardDetails {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 280px repeat(3, 1fr);
 }
 
 .container {
+    background: rgba(255, 238, 238, .9);
     transform: skewY(-11deg);
+    padding: 16px;
+    padding-bottom: 36px;
 }
 
 .content {

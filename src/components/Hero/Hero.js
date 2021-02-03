@@ -18,10 +18,8 @@ const Hero = () => {
                 onMouseEnter={() => setIsFirstHovered(true)}
                 onMouseLeave={() => setIsFirstHovered(false)}
                 >
-                    <Teiului />
-                    {/* {isFirstHovered ? <Teiului /> : null } */}
+                    {isFirstHovered ? <Teiului /> : null }
             </motion.div>
-            <div className={classes.delimiter}></div>
             <motion.div
                 className={classes.borzesti + ' grid content-end'}
                 onMouseEnter={() => setIsSecondHovered(true)}
