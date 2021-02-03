@@ -11,7 +11,8 @@ import { ReactComponent as Location } from '../../../assets/icons/placeholder.sv
 const ContactCard = (props) => {
     const contactVariants = {
         hidden: {
-            scaleY: 0
+            scaleY: 0,
+            originY: 'bottom'
         },
         visible: {
             scaleY: 1,
@@ -22,46 +23,86 @@ const ContactCard = (props) => {
         }
     };
 
+    const ctaVariants = {
+        hidden: {
+            x: '-100%'
+        },
+        visible: {
+            x: 0,
+            skewY: -11,
+            transition: {
+                duration: 0.55
+            }
+        }
+    }
+
+    const aVariants = {
+        visible: {
+            scale: 1,
+            originX: 'left'
+        },
+        hovered: {
+            scale: 1.2,
+            originX: 'left'
+        }
+    }
+
     return (
         <motion.div
-            className={classes.card}
+            className={classes.card + ' overflow-hidden'}
             variants={contactVariants}
             initial='hidden'
             animate='visible' >
                 <div className={classes.cardDetails + ' pt-20 z-10'}>
-                    <a
+                    <motion.div
+                        className={classes.container}
+                        variants={ctaVariants} >
+                            <div className={classes.content + ' pl-6 pb-10 grid'}>
+                                <motion.a
+                                    href={`tel:${props.phone}`}
+                                    className="bold text-xl md:text-sm tracking-wide text-primary-4 w-max"
+                                    variants={aVariants}
+                                    initial="visible"
+                                    whileHover="hovered" >
+                                        SUNĂ
+                                </motion.a>
+                                <a href={`mailto:${props.email}`} className="bold text-xl md:text-sm tracking-wide text-primary-4 w-max">SCRIE <span className="text-base md:text-xs normal-weight text-neutral-9">sau</span></a>
+                                <a href={props.mapCode} target="_blank" rel="noopener noreferrer" className="bold text-xl md:text-sm tracking-wide text-primary-4 w-max">VIZITEAZĂ-NE</a>
+                            </div>
+                    </motion.div>
+                    {/* <a
                         href={`tel:${props.phone}`}
-                        className='grid justify-center items-baseline cursor-pointer'>
+                        className='grid justify-center items-baseline cursor-auto'>
                             <motion.div
-                                className='justify-self-center mb-8'
+                                className='justify-self-center cursor-pointer'
                                 whileHover={{rotateZ: [0, 15, -15, 15, -15, 0]}}
                                 transition={{duration: 0.3}}>
                                     <Telephone/>
                             </motion.div>
-                            <motion.p whileHover={{scale: 1.2}}>{props.phone}</motion.p>
+                            <p className="text-sm md:text-xs cursor-pointer">{props.phone}</p>
                     </a>
                     <a
                         href={`mailto:${props.email}`}
-                        className='grid justify-center items-baseline cursor-pointer'>
+                        className='grid justify-center items-baseline cursor-auto'>
                             <motion.div
-                                className='justify-self-center mb-8'
+                                className='justify-self-center cursor-pointer'
                                 whileHover={{scale: 1.2}}>
                                     <Mail />
                             </motion.div>
-                            <motion.p whileHover={{scale: 1.2}}>{props.email}</motion.p>
+                            <p className="text-sm md:text-xs cursor-pointer">{props.email}</p>
                     </a>
                     <a
                         href={props.mapCode}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className='grid justify-center items-baseline cursor-pointer'>
+                        className='grid justify-center items-baseline cursor-auto'>
                             <motion.div
-                                className='justify-self-center mb-8'
+                                className='justify-self-center cursor-pointer'
                                 whileHover={{scale: 1.2}}>
                                     <Location/>
                             </motion.div>
-                            <motion.p whileHover={{scale: 1.2}}>{props.address}</motion.p>
-                    </a>
+                            <p className="text-sm md:text-xs cursor-pointer">{props.address}</p>
+                    </a> */}
                 </div>
         </motion.div>
     )

@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Layout>
+      <Layout className='text-neutral-9'>
         {routes}
       </Layout>
     </BrowserRouter>

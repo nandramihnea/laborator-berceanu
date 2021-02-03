@@ -67,6 +67,10 @@ module.exports = {
         '9': '#8D2B0B'
       },
     },
+    screens: {
+      'md': {'max': '1023px'},
+      'sm': {'max': '500px'},
+    },
     extend: {},
   },
   variants: {},
