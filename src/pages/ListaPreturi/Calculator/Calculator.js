@@ -14,6 +14,7 @@ const Calculator = (props) => {
                 setTotalPrice(price);
             }
         }
+        // eslint-disable-next-line
     }, [props.selectedElement]);
 
     const deleteEntryHandler = (clickedElement) => {

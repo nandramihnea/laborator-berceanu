@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 import classes from './ContactCard.module.css';
 
-import { ReactComponent as Telephone } from '../../../assets/icons/smartphone.svg';
-import { ReactComponent as Mail } from '../../../assets/icons/mail.svg';
-import { ReactComponent as Location } from '../../../assets/icons/placeholder.svg';
+// import { ReactComponent as Telephone } from '../../../assets/icons/smartphone.svg';
+// import { ReactComponent as Mail } from '../../../assets/icons/mail.svg';
+// import { ReactComponent as Location } from '../../../assets/icons/placeholder.svg';
 
 const ContactCard = (props) => {
     const contactVariants = {
