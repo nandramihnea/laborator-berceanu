@@ -1,0 +1,59 @@
+.hero {
+    display: flex;
+    height: 100%;
+    column-gap: 10px;
+}
+
+.teiului {
+    background: url('../../assets/images/1.jpg');
+}
+
+.borzesti {
+    background: url('../../assets/images/2.jpg');
+}
+
+.delimiter {
+    width: 10px;
+    height: 100%;
+}
+
+.teiului,
+.borzesti {
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(1);
+    position: relative;
+    flex: 1;
+    transition: all 0.5s;
+}
+
+.teiului:hover,
+.borzesti:hover {
+    filter: none;
+    flex: 1.5;
+}
+
+.teiului:after,
+.borzesti:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.borzesti:hover:after,
+.teiului:hover:after {
+    opacity: 0;
+}
+
+@media (max-width: 1023px) {
+}
+
+@media (max-width: 500px) {
+
+}

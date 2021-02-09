@@ -4,48 +4,16 @@
 
 .cardDetails {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 36px;
-    padding-top: 78px;
+    grid-template-columns: 280px repeat(3, 1fr);
 }
 
-.button {
-    color: white;
+.container {
+    background: rgba(255, 238, 238, .9);
+    transform: skewY(-11deg);
+    padding: 16px;
+    padding-bottom: 36px;
 }
 
-.header {
-    cursor: pointer;
+.content {
     width: max-content;
-}
-
-.header:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 40%;
-    height: 2px;
-    display: block;
-    margin-top: 10px;
-    transition: all 0.5s ease-out;
-    background-color: #27241D;
-}
-
-.header:hover:after {
-    width: 100%;
-}
-
-.input {
-    background: transparent;
-    line-height: normal;
-    border-bottom: 1px dashed #27241D;;
-}
-
-.input:focus {
-    outline: 0;
-}
-
-.textarea {
-    resize: none;
-    width: 100px;
-    height: 100px;
 }
