@@ -2,9 +2,15 @@
     position: sticky;
     bottom: 0;
     left: 0;
-    display: grid;
-    grid-template-columns: minmax(max-content, 198px) 1fr minmax(max-content, 198px);
     border-top: 3px solid #BA2525;
+}
+
+.arrowWrapper {
+    margin: 0 auto;
+}
+
+.contact {
+    margin: 0 auto;
 }
 
 .copyright {

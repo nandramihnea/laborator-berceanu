@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 
-import Teiului from '../../pages/Contact/Teiului/Teiului';
-import Borzesti from '../../pages/Contact/Borzesti/Borzesti';
+import { borzesti, teiului } from '../../assets/contactInfo';
 
 import { motion } from "framer-motion";
 
 import classes from './Hero.module.css';
+import ContactWidget from '../Contact/ContactWidget/ContactWidget';
 
 const Hero = () => {
     const [isFirstHovered, setIsFirstHovered] = useState(false);
@@ -18,13 +18,13 @@ const Hero = () => {
                 onMouseEnter={() => setIsFirstHovered(true)}
                 onMouseLeave={() => setIsFirstHovered(false)}
                 >
-                    {isFirstHovered ? <Teiului /> : null }
+                    {isFirstHovered ? <ContactWidget data={teiului} /> : null }
             </motion.div>
             <motion.div
                 className={classes.borzesti + ' grid content-end'}
                 onMouseEnter={() => setIsSecondHovered(true)}
                 onMouseLeave={() => setIsSecondHovered(false)} >
-                    {isSecondHovered ? <Borzesti /> : null }
+                    {isSecondHovered ? <ContactWidget data={borzesti} /> : null }
             </motion.div>
         </div>
     )

@@ -2,9 +2,11 @@ import React from 'react';
 
 import { motion } from "framer-motion";
 
-import classes from './ContactCard.module.css';
+import classes from './ContactWidget.module.css';
 
-const ContactCard = (props) => {
+const ContactWidget = (props) => {
+    const data = props.data;
+
     const contactVariants = {
         hidden: {
             scaleY: 0,
@@ -56,7 +58,7 @@ const ContactCard = (props) => {
                         variants={ctaVariants} >
                             <div className={classes.content + ' grid'}>
                                 <motion.a
-                                    href={`tel:${props.phone}`}
+                                    href={`tel:${data.phone}`}
                                     className="bold text-2xl md:text-sm font-bold text-primary-4 w-max"
                                     variants={aVariants}
                                     initial="visible"
@@ -65,7 +67,7 @@ const ContactCard = (props) => {
                                 </motion.a>
                                 <div className="flex items-baseline w-max">
                                     <motion.a
-                                        href={`mailto:${props.email}`}
+                                        href={`mailto:${data.email}`}
                                         className="bold text-2xl md:text-sm font-bold text-primary-4 mr-3"
                                         variants={aVariants}
                                         initial="visible"
@@ -75,7 +77,7 @@ const ContactCard = (props) => {
                                     <span className="text-lg md:text-xs normal-weight text-neutral-9">sau</span>
                                 </div>
                                 <motion.a
-                                    href={props.mapCode}
+                                    href={data.mapCode}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="bold text-2xl md:text-sm font-bold text-primary-4 w-max"
@@ -91,4 +93,4 @@ const ContactCard = (props) => {
     )
 };
 
-export default ContactCard;
+export default ContactWidget;
