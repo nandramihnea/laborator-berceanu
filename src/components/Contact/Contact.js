@@ -11,7 +11,7 @@ const Contact = (props) => {
     const data = props.data;
 
     return (
-        <div className="">
+        <div>
             <a
                 href={data.mapCode}
                 target="_blank"

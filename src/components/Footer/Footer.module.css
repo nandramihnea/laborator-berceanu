@@ -46,3 +46,13 @@
         height: 20px;
     }
 }
+
+@media (max-width: 800px) {
+    .button {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 650px) {
+    
+}

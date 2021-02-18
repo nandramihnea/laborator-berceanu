@@ -63,7 +63,7 @@ const ContactWidget = (props) => {
                                     variants={aVariants}
                                     initial="visible"
                                     whileHover="hovered" >
-                                        SUNĂ
+                                        SUNĂ <span className="text-base">({data.phone})</span>
                                 </motion.a>
                                 <div className="flex items-baseline w-max">
                                     <motion.a
