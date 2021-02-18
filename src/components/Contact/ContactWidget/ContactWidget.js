@@ -2,13 +2,11 @@ import React from 'react';
 
 import { motion } from "framer-motion";
 
-import classes from './ContactCard.module.css';
+import classes from './ContactWidget.module.css';
 
-import { ReactComponent as Telephone } from '../../../assets/icons/smartphone.svg';
-import { ReactComponent as Mail } from '../../../assets/icons/mail.svg';
-import { ReactComponent as Location } from '../../../assets/icons/placeholder.svg';
+const ContactWidget = (props) => {
+    const data = props.data;
 
-const ContactCard = (props) => {
     const contactVariants = {
         hidden: {
             scaleY: 0,
@@ -60,16 +58,16 @@ const ContactCard = (props) => {
                         variants={ctaVariants} >
                             <div className={classes.content + ' grid'}>
                                 <motion.a
-                                    href={`tel:${props.phone}`}
+                                    href={`tel:${data.phone}`}
                                     className="bold text-2xl md:text-sm font-bold text-primary-4 w-max"
                                     variants={aVariants}
                                     initial="visible"
                                     whileHover="hovered" >
-                                        SUNĂ
+                                        SUNĂ <span className="text-base">({data.phone})</span>
                                 </motion.a>
                                 <div className="flex items-baseline w-max">
                                     <motion.a
-                                        href={`mailto:${props.email}`}
+                                        href={`mailto:${data.email}`}
                                         className="bold text-2xl md:text-sm font-bold text-primary-4 mr-3"
                                         variants={aVariants}
                                         initial="visible"
@@ -79,7 +77,7 @@ const ContactCard = (props) => {
                                     <span className="text-lg md:text-xs normal-weight text-neutral-9">sau</span>
                                 </div>
                                 <motion.a
-                                    href={props.mapCode}
+                                    href={data.mapCode}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="bold text-2xl md:text-sm font-bold text-primary-4 w-max"
@@ -90,42 +88,9 @@ const ContactCard = (props) => {
                                 </motion.a>
                             </div>
                     </motion.div>
-                    {/* <a
-                        href={`tel:${props.phone}`}
-                        className='grid justify-center items-baseline cursor-auto'>
-                            <motion.div
-                                className='justify-self-center cursor-pointer'
-                                whileHover={{rotateZ: [0, 15, -15, 15, -15, 0]}}
-                                transition={{duration: 0.3}}>
-                                    <Telephone/>
-                            </motion.div>
-                            <p className="text-sm md:text-xs cursor-pointer">{props.phone}</p>
-                    </a>
-                    <a
-                        href={`mailto:${props.email}`}
-                        className='grid justify-center items-baseline cursor-auto'>
-                            <motion.div
-                                className='justify-self-center cursor-pointer'
-                                whileHover={{scale: 1.2}}>
-                                    <Mail />
-                            </motion.div>
-                            <p className="text-sm md:text-xs cursor-pointer">{props.email}</p>
-                    </a>
-                    <a
-                        href={props.mapCode}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className='grid justify-center items-baseline cursor-auto'>
-                            <motion.div
-                                className='justify-self-center cursor-pointer'
-                                whileHover={{scale: 1.2}}>
-                                    <Location/>
-                            </motion.div>
-                            <p className="text-sm md:text-xs cursor-pointer">{props.address}</p>
-                    </a> */}
                 </div>
         </motion.div>
     )
 };
 
-export default ContactCard;
+export default ContactWidget;

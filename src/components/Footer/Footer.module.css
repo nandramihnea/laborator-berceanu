@@ -1,0 +1,85 @@
+.footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    border-top: 3px solid #BA2525;
+}
+
+.arrowWrapper {
+    margin: 0 auto;
+}
+
+.contact {
+    margin: 0 auto;
+}
+
+.copyright {
+    align-self: end;
+    justify-self: flex-end;
+}
+
+.logo > g {
+    fill: #D64545;
+}
+
+.wrapper {
+    grid-template-rows: repeat(2, max-content);
+    align-content: flex-end;
+}
+
+.button {
+    align-self: flex-end;
+    justify-self: center;
+}
+
+.arrow {
+    clip-path: polygon(50% 0, 100% 85%, 100% 100%, 50% 15%, 0 100%, 0 85%);
+    background: #D64545;
+    width: 100px;
+    height: 35px;
+    justify-self: center;
+}
+
+.separator {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    .footer {
+        grid-template-columns: minmax(max-content, 172px) 1fr minmax(max-content, 172px);
+    }
+
+    .arrow {
+        width: 70px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 670px) {
+    .button {
+        opacity: 0;
+    }
+
+    .separator {
+        display: block;
+        border-top: 1px solid #D3CEC4;
+        margin-left: auto;
+        margin-right: auto;
+        width: 94%;
+    }
+
+    .contactWidget {
+        display: block !important;
+    }
+}
+
+@media (max-width: 450px) {
+    .arrow {
+        width: 30px;
+        height: 10px;
+    }
+
+    .copyright {
+        font-size: 11px !important;
+    }
+}

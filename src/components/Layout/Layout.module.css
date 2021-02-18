@@ -3,17 +3,3 @@
     display: grid;
     grid-template-rows: 1fr min-content;
 }
-
-.footer {
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    display: grid;
-    grid-template-columns: max-content 1fr;
-}
-
-.copyright {
-    height: min-content;
-    align-self: end;
-    justify-self: end;
-}
