@@ -1,18 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Creator: CorelDRAW X6 -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100px" height="200px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 838 1331"
- xmlns:xlink="http://www.w3.org/1999/xlink">
- <defs>
-  <style type="text/css">
-   <![CDATA[
-    .fil0 {fill:#ED3237}
-   ]]>
-  </style>
- </defs>
- <g id="Layer_x0020_1">
-  <metadata id="CorelCorpID_0Corel-Layer"/>
-  <path class="fil0" d="M51 1111c-143,-337 30,-765 332,-1111 -15,302 108,435 277,533 217,126 261,535 -14,727 -162,113 -451,111 -595,-149zm367 -371c-99,0 -179,79 -179,177 0,98 80,178 179,178 99,0 179,-80 179,-178 0,-98 -80,-177 -179,-177zm30 51l-60 0 0 96 -97 0 0 60 97 0 0 96 60 0 0 -96 97 0 0 -60 -97 0 0 -96z"/>
- </g>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="50px" height="80px" viewBox="0 0 1277.000000 2039.000000"
+ preserveAspectRatio="xMidYMid meet">
+<metadata>
+Created by potrace 1.16, written by Peter Selinger 2001-2019
+</metadata>
+<g transform="translate(0.000000,2039.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M5654 20183 c-3127 -3642 -5099 -7584 -5573 -11143 -78 -579 -74
+-512 -78 -1590 -4 -933 -3 -984 17 -1185 94 -940 303 -1810 637 -2660 80 -204
+130 -299 286 -550 846 -1361 2024 -2300 3442 -2745 401 -126 820 -210 1278
+-257 247 -25 947 -25 1197 0 1180 120 2211 502 3102 1148 628 455 1203 1052
+1632 1692 347 518 605 1048 808 1660 411 1237 478 2608 193 3902 -231 1045
+-664 1953 -1295 2715 -131 159 -459 487 -615 616 -246 203 -362 282 -765 524
+-1005 601 -1728 1176 -2314 1840 -1028 1166 -1602 2611 -1755 4421 -36 419
+-44 683 -39 1257 3 298 5 542 4 542 -1 0 -74 -84 -162 -187z m1048 -11149
+c909 -112 1716 -687 2113 -1509 136 -281 214 -554 251 -872 24 -207 15 -537
+-20 -740 -48 -273 -125 -507 -247 -752 -352 -708 -988 -1226 -1751 -1426
+-1251 -327 -2564 269 -3137 1425 -195 393 -281 761 -281 1200 0 255 21 428 80
+660 307 1215 1444 2069 2707 2034 89 -2 217 -11 285 -20z"/>
+<path d="M5890 7555 l0 -735 -740 0 -740 0 0 -460 0 -460 740 0 740 0 0 -735
+0 -735 465 0 465 0 0 735 0 735 740 0 740 0 0 460 0 460 -740 0 -740 0 0 735
+0 735 -465 0 -465 0 0 -735z"/>
+</g>
 </svg>

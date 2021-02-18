@@ -1,7 +1,6 @@
 .hero {
     display: flex;
     height: 100%;
-    column-gap: 10px;
 }
 
 .teiului {

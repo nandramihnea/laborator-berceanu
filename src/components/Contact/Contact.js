@@ -16,7 +16,7 @@ const Contact = (props) => {
                 href={data.mapCode}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={classes.row + ' grid cursor-auto py-4'}>
+                className={classes.row + ' grid cursor-auto py-4 md:py-3 sm:py-2'}>
                     <motion.div
                         className='cursor-pointer'
                         whileHover={{scale: 1.2}}>
@@ -26,7 +26,7 @@ const Contact = (props) => {
             </a>
             <a
                 href={`tel:${data.phone}`}
-                className={classes.row + ' grid cursor-auto py-6'}>
+                className={classes.row + ' grid cursor-auto py-4 md:py-3 sm:py-2'}>
                     <motion.div
                         className='cursor-pointer'
                         whileHover={{rotateZ: [0, 15, -15, 15, -15, 0]}}
@@ -37,7 +37,7 @@ const Contact = (props) => {
             </a>
             <a
                 href={`mailto:${data.email}`}
-                className={classes.row + ' grid cursor-auto py-6'}>
+                className={classes.row + ' grid cursor-auto py-4 md:py-3 sm:py-2'}>
                     <motion.div
                         className='cursor-pointer'
                         whileHover={{scale: 1.2}}>
