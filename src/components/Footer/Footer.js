@@ -26,7 +26,7 @@ const Footer = () => {
                 <div onClick={handleContactClick} className={classes.arrowWrapper + ' cursor-pointer w-max'}>
                     <div className={classes.arrow + ' transform rotate-180'}></div>
                 </div>
-                <div className='grid grid-cols-2'>
+                <div className='grid grid-cols-2 justify-items-center gap-x-4 py-10'>
                     <Contact data={borzesti}/>
                     <Contact data={teiului}/>
                 </div>

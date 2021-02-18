@@ -1,0 +1,7 @@
+.row {
+    grid-template-columns: max-content 1fr;
+}
+
+.svg {
+    fill: #BA2525;
+}
