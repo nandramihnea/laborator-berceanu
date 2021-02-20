@@ -2,4 +2,11 @@
     height: 100vh;
     display: grid;
     grid-template-rows: 1fr min-content;
+    grid-template-columns: [full-start] minmax(24px,1fr) [center-start] minmax(900px,1400px) [center-end] minmax(24px,1fr) [full-end];
+}
+
+@media (max-width: 1023px) {
+    .layout {
+        grid-template-columns: [full-start] 0 [center-start] 1fr [center-end] 0 [full-end];
+    }
 }

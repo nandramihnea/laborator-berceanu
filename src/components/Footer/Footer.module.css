@@ -3,6 +3,7 @@
     bottom: 0;
     left: 0;
     border-top: 3px solid #BA2525;
+    grid-column: center-start/center-end;
 }
 
 .arrowWrapper {
@@ -55,7 +56,7 @@
     }
 }
 
-@media (max-width: 670px) {
+@media (max-width: 800px) {
     .button {
         opacity: 0;
     }

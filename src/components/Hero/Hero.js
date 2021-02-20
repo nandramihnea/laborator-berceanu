@@ -12,7 +12,7 @@ const Hero = () => {
     const [isSecondHovered, setIsSecondHovered] = useState(false);
 
     return (
-        <div className={classes.hero + ' md:grid gap-x-1'} >
+        <section className={classes.hero + ' md:grid gap-x-1'} >
             <motion.div
                 className={classes.teiului + ' grid content-end'}
                 onMouseEnter={() => setIsFirstHovered(true)}
@@ -26,7 +26,7 @@ const Hero = () => {
                 onMouseLeave={() => setIsSecondHovered(false)} >
                     {isSecondHovered ? <ContactWidget data={borzesti} /> : null }
             </motion.div>
-        </div>
+        </section>
     )
 }
 
