@@ -6,7 +6,7 @@ import classes from './Layout.module.css';
 
 const Layout = (props) => {
     return (
-        <div className={classes.layout + ' bg-primary-0'}>
+        <div className={classes.layout + ' relative bg-primary-0'}>
             {props.children}
             <Footer />
         </div>
