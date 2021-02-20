@@ -14,14 +14,14 @@ const Hero = () => {
     return (
         <section className={classes.hero + ' md:grid gap-x-1'} >
             <motion.div
-                className={classes.teiului + ' grid content-end'}
+                className={classes.teiului + ' relative grid content-end'}
                 onMouseEnter={() => setIsFirstHovered(true)}
                 onMouseLeave={() => setIsFirstHovered(false)}
                 >
                     {isFirstHovered ? <ContactWidget data={teiului} /> : null }
             </motion.div>
             <motion.div
-                className={classes.borzesti + ' grid content-end'}
+                className={classes.borzesti + ' relative grid content-end'}
                 onMouseEnter={() => setIsSecondHovered(true)}
                 onMouseLeave={() => setIsSecondHovered(false)} >
                     {isSecondHovered ? <ContactWidget data={borzesti} /> : null }
