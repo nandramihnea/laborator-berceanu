@@ -10,11 +10,11 @@ const ContactWidget = (props) => {
     const contactVariants = {
         hidden: {
             scaleY: 0,
-            originY: 'bottom'
+            originY: 'top'
         },
         visible: {
             scaleY: 1,
-            originY: 'bottom',
+            originY: 'top',
             transition: {
                 duration: 0.4
             }
@@ -48,11 +48,11 @@ const ContactWidget = (props) => {
 
     return (
         <motion.div
-            className={classes.card + ' overflow-hidden'}
+            className={classes.card + ' absolute overflow-hidden'}
             variants={contactVariants}
             initial='hidden'
             animate='visible' >
-                <div className={classes.cardDetails + ' pt-20 z-10'}>
+                <div className={classes.cardDetails + ' pt-8 pb-8 z-10'}>
                     <motion.div
                         className={classes.container}
                         variants={ctaVariants} >

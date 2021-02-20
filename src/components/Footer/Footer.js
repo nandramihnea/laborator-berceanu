@@ -36,7 +36,7 @@ const Footer = () => {
 
     return (
         <footer
-            className={classes.footer + ' relative py-8 bg-primary-0'}>
+            className={classes.footer + ' z-10 w-full py-8 bg-primary-0'}>
                 { isContactOpened &&
                 <motion.div
                     variants={variants}
