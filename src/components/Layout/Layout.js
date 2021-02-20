@@ -6,10 +6,8 @@ import classes from './Layout.module.css';
 
 const Layout = (props) => {
     return (
-        <div className={classes.layout}>
-            <main>
-                {props.children}
-            </main>
+        <div className={classes.layout + ' bg-primary-0'}>
+            {props.children}
             <Footer />
         </div>
     )

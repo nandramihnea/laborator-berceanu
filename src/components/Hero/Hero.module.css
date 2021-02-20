@@ -1,6 +1,7 @@
 .hero {
     display: flex;
     height: 100%;
+    grid-column: center-start/center-end;
 }
 
 .teiului {
