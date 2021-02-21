@@ -1,14 +1,20 @@
 import React, { Fragment } from 'react';
 
+import Footer from '../../components/Footer/Footer';
 import Hero from '../../components/Hero/Hero';
+import Acreditari from '../Acreditari/Acreditari';
+import ListaPreturi from '../ListaPreturi/ListaPreturi';
 
-// import classes from './Home.module.css';
+import classes from './Home.module.css';
 
 const Home = () => {
     return (
-        <Fragment>
+        <div className={classes.home}>
             <Hero />
-        </Fragment>
+            <Acreditari />
+            <ListaPreturi />
+            <Footer />
+        </div>
     )
 }
 
