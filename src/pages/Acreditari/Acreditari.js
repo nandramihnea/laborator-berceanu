@@ -3,7 +3,7 @@ import React from 'react';
 
 const Acreditari = () => {
     return (
-        <section className={classes.acreditari + ' w-3/4 md:w-auto mx-auto md:mx-12 sm:mx-6 '}>
+        <section className={classes.acreditari + ' w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6 '}>
             <p>Acreditari page</p>
             <p>Acreditari page</p>
             <p>Acreditari page</p>

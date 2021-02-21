@@ -41,7 +41,7 @@ const Footer = () => {
                 <motion.div
                     variants={variants}
                     animate={isContactOpened ? 'visible' : 'hidden'}
-                    className="w-3/4 md:w-auto mx-auto md:mx-12 sm:mx-6" >
+                    className="w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6" >
                         <div onClick={handleContactClick} className={classes.arrowWrapper + ' cursor-pointer w-max'}>
                             <div className={classes.arrow + ' transform rotate-180'}></div>
                         </div>
@@ -52,7 +52,7 @@ const Footer = () => {
                         </div>
                 </motion.div> }
                 <div
-                    className='relative w-3/4 md:w-auto mx-auto md:mx-12 sm:mx-6' >
+                    className='relative w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6' >
                         <Logo
                             className={classes.logo + ' absolute bottom-0 left-0 cursor-pointer sm:h-12 md:h-14 h-20'}
                             alt="logo"
@@ -72,7 +72,7 @@ const Footer = () => {
                                 Created by <a
                                             href="https://www.linkedin.com/in/mihnea-nandra/"
                                             target="_blank" rel="noopener noreferrer"
-                                            className="hover:underline">Mihnea NANDRA
+                                            className="hover:underline text-green-7">Mihnea NANDRA
                                             </a>
                             </span>
                         </div>

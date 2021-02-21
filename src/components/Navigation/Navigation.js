@@ -1,20 +1,23 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import classes from './Navigation.module.css';
+import React, {useState} from 'react'
+
+import NavDesktop from './NavDesktop/NavDesktop';
+import NavMobile from './NavMobile/NavMobile';
 
 const Navigation = () => {
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+    const SCREEN_SIZE = 1023;
+
+
+    const reportWindowSize = () => {
+        setScreenWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', reportWindowSize);
+
     return (
-        <ul className={classes.navigation + ' p-8 z-30 w-3/4 md:w-auto mx-auto md:mx-12 sm:mx-6'}>
-            <li className="ml-8 text-primary-4 font-bold tracking-wide">
-                <Link to="/lista-preturi">Prețuri</Link>
-            </li>
-            <li className="ml-8 text-primary-4 font-bold tracking-wide">
-                <Link>Contact</Link>
-            </li>
-            <li className="ml-8 text-primary-4 font-bold tracking-wide">
-                <Link>Acreditări</Link>
-            </li>
-        </ul>
+        <div className="sticky h-0 top-0 flex justify-end z-30 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6">
+            {screenWidth > SCREEN_SIZE ? <NavDesktop /> : <NavMobile />}
+        </div>
     )
 }
 export default Navigation;
