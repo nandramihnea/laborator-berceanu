@@ -5,8 +5,26 @@
     grid-template-columns: [full-start] minmax(24px,1fr) [center-start] minmax(900px,1400px) [center-end] minmax(24px,1fr) [full-end];
 }
 
+.logo {
+    position: fixed;
+    top: -20vh;
+    right: -10vh;
+    width: 35vw;
+    height: 100vh;
+}
+
+.logo > g {
+    fill: rgba(214, 69, 69, 0.07);
+}
+
 @media (max-width: 1023px) {
     .layout {
         grid-template-columns: [full-start] 0 [center-start] 1fr [center-end] 0 [full-end];
+    }
+
+    .logo {
+        top: -27vh;
+        right: -1vh;
+        width: 32vw;
     }
 }
