@@ -27,7 +27,7 @@ const NavMobile = () => {
                 <button
                     className={classes.button + ' p-5 cursor-pointer focus:outline-none'}
                     onClick={() => setIsOpened(!isOpened)}>
-                        <svg width="23" height="19" viewBox="0 0 23 19">
+                        <svg width="23" height="19" className={classes.svg} viewBox="0 0 23 19">
                             <Path
                                 variants={{
                                     closed: { d: "M 2 2.5 L 20 2.5" },

@@ -2,6 +2,6 @@
     display: grid;
     grid-column: 1/span-1;
     border-radius: 15px;
-    background: rgba(250, 205, 205, 0.8);
+    background: rgba(250, 205, 205);
     border: 1px solid #BA2525;
 }

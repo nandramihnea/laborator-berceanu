@@ -1,11 +1,16 @@
 .button {
     border-radius: 50%;
     border: 1px solid #BA2525;
-    background: rgba(250, 205, 205, 0.8);
+    background: rgba(250, 205, 205);
     grid-column: 3/-1;
 }
 
 .navigation {
     display: grid;
     grid-template-columns: max-content 1fr;
+}
+
+.svg {
+    min-width: 23px;
+    min-height: 23px;
 }

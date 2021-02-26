@@ -5,8 +5,8 @@ import classes from './NavDesktop.module.css';
 
 const NavDesktop = () => {
     return (
-        <ul className={classes.navigation + ' mt-8'}>
-            <NavItems classes='ml-8 text-primary-4 font-bold tracking-wide' />
+        <ul className={classes.navigation}>
+            <NavItems classes='ml-8 text-primary-4 font-bold tracking-wide mt-8' />
         </ul>
     )
 }
