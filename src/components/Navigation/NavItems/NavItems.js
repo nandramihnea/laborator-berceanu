@@ -9,11 +9,11 @@ const NavItems = (props) => {
     const variants = {
         hidden: {
             scale: 1,
-            originX: 'left'
+            originX: 'center'
         },
         hover: {
-            scale: 1.2,
-            originX: 'left'
+            scale: 1.16,
+            originX: 'center',
         }
     }
 
@@ -23,21 +23,21 @@ const NavItems = (props) => {
                 variants={variants}
                 initial='hidden'
                 whileHover='hover'
-                className={props.classes + classes.li} >
+                className={props.classes + classes.li + ' p-2'} >
                     <Link to="/lista-preturi" className="text-lg sm:text-base">Prețuri</Link>
             </motion.li>
             <motion.li
                 variants={variants}
                 initial='hidden'
                 whileHover='hover'
-                className={props.classes + classes.li} >
+                className={props.classes + classes.li + ' p-2'} >
                     <Link to='/' className="text-lg sm:text-base">Contact</Link>
             </motion.li>
             <motion.li
                 variants={variants}
                 initial='hidden'
                 whileHover='hover'
-                className={props.classes + classes.li} >
+                className={props.classes + classes.li + ' p-2'} >
                     <Link to='/' className="text-lg sm:text-base">Acreditări</Link>
             </motion.li>
         </>
