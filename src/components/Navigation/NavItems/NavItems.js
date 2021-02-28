@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
-import classes from './NavItems.modules.css';
 
 const NavItems = (props) => {
     const variants = {
@@ -23,21 +22,21 @@ const NavItems = (props) => {
                 variants={variants}
                 initial='hidden'
                 whileHover='hover'
-                className={props.classes + classes.li + ' p-2'} >
+                className={props.classes + ' p-4'} >
                     <Link to="/lista-preturi" className="text-lg sm:text-base">Prețuri</Link>
             </motion.li>
             <motion.li
                 variants={variants}
                 initial='hidden'
                 whileHover='hover'
-                className={props.classes + classes.li + ' p-2'} >
+                className={props.classes + ' p-4'} >
                     <Link to='/' className="text-lg sm:text-base">Contact</Link>
             </motion.li>
             <motion.li
                 variants={variants}
                 initial='hidden'
                 whileHover='hover'
-                className={props.classes + classes.li + ' p-2'} >
+                className={props.classes + ' p-4'} >
                     <Link to='/' className="text-lg sm:text-base">Acreditări</Link>
             </motion.li>
         </>

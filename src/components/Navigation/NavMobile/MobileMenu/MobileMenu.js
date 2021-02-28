@@ -27,12 +27,12 @@ const MobileMenu = () => {
     return (
         <AnimatePresence>
             <motion.ul
-                className={classes.wrapper + ' p-16 mt-8'}
+                className={classes.wrapper + ' bg-green-8 p-10 mt-8'}
                 variants={variants}
                 initial='hidden'
                 animate='visible'
                 exit='exit' >
-                    <NavItems classes='p-2 text-primary-5 font-bold tracking-wide' />
+                    <NavItems classes='p-2 text-primary-0 font-bold tracking-wide' />
             </motion.ul>
         </AnimatePresence>
     )

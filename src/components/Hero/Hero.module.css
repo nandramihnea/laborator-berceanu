@@ -52,8 +52,8 @@
 }
 
 @media (max-width: 1023px) {
+    .hero {
+        display: grid;
+    }
 }
 
-@media (max-width: 500px) {
-
-}

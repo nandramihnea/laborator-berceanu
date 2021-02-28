@@ -10,7 +10,7 @@ const Path = (props) => (
     <motion.path
       fill="transparent"
       strokeWidth="2"
-      stroke="#BA2525"
+      stroke="#FFEEEE"
       strokeLinecap="round"
       {...props}
     />
@@ -21,11 +21,11 @@ const NavMobile = () => {
 
     return (
         <motion.div
-            className={classes.navigation + ' w-max mt-8'}
+            className={classes.navigation + ' w-max my-4'}
             initial={false}
             animate={isOpened ? "open" : "closed"} >
                 <button
-                    className={classes.button + ' p-5 cursor-pointer focus:outline-none'}
+                    className={classes.button + ' bg-green-8 p-5 cursor-pointer focus:outline-none'}
                     onClick={() => setIsOpened(!isOpened)}>
                         <svg width="23" height="19" className={classes.svg} viewBox="0 0 23 19">
                             <Path

@@ -12,7 +12,7 @@ const Hero = () => {
     const [isSecondHovered, setIsSecondHovered] = useState(false);
 
     return (
-        <section className={classes.hero + ' md:grid gap-x-1 max-h-screen'} >
+        <section className={classes.hero + ' gap-x-1 max-h-screen'} >
             <motion.div
                 className={classes.teiului + ' relative grid content-end'}
                 onMouseEnter={() => setIsFirstHovered(true)}
