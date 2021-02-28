@@ -59,7 +59,7 @@ const ContactWidget = (props) => {
                             <div className={classes.content + ' grid'}>
                                 <motion.a
                                     href={`tel:${data.phone}`}
-                                    className="bold text-2xl md:text-sm font-bold text-primary-4 w-max"
+                                    className="bold text-2xl md:text-base font-bold text-primary-4 w-max"
                                     variants={aVariants}
                                     initial="visible"
                                     whileHover="hovered" >
@@ -68,7 +68,7 @@ const ContactWidget = (props) => {
                                 <div className="flex items-baseline w-max">
                                     <motion.a
                                         href={`mailto:${data.email}`}
-                                        className="bold text-2xl md:text-sm font-bold text-primary-4 mr-3"
+                                        className="bold text-2xl md:text-base font-bold text-primary-4 mr-3"
                                         variants={aVariants}
                                         initial="visible"
                                         whileHover="hovered" >
@@ -80,7 +80,7 @@ const ContactWidget = (props) => {
                                     href={data.mapCode}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="bold text-2xl md:text-sm font-bold text-primary-4 w-max"
+                                    className="bold text-2xl md:text-base font-bold text-primary-4 w-max"
                                     variants={aVariants}
                                     initial="visible"
                                     whileHover="hovered" >

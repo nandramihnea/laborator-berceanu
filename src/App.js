@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './App.css';
-import './typography.css';
 
 import Acreditari from './pages/Acreditari/Acreditari';
 import ListaPreturi from './pages/ListaPreturi/ListaPreturi';
@@ -20,7 +19,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Layout className='text-neutral-9'>
+      <Layout>
         {routes}
       </Layout>
     </BrowserRouter>

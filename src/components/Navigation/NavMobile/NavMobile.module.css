@@ -1,0 +1,14 @@
+.button {
+    border-radius: 50%;
+    grid-column: 3/-1;
+}
+
+.navigation {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+}
+
+.svg {
+    min-width: 24px;
+    min-height: 24px;
+}
