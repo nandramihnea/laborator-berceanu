@@ -4,21 +4,23 @@ import { motion } from "framer-motion";
 
 import classes from './Footer.module.css';
 import { borzesti, teiului } from '../../assets/contactInfo';
-
 import {ReactComponent as Logo} from '../../assets/icons/logo.svg';
 
 import Contact from '../Contact/Contact';
+import { useHomeContext, useHomeContextUpdate } from '../../context/HomeContext';
 
 const Footer = () => {
+    const isContactOpened = useHomeContext();
+    const toggleIsContactOpened = useHomeContextUpdate();
+
     let history = useHistory();
-    const [isContactOpened, setIsContactOpened] = useState(false);
 
     const handleLogoClick = () => {
         history.push('/');
     }
 
     const handleContactClick = () => {
-        setIsContactOpened(!isContactOpened);
+        toggleIsContactOpened(isContactOpened);
     }
 
     const variants = {
