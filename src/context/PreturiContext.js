@@ -7,10 +7,14 @@ export const PreturiContext = createContext({
 export function PreturiProvider({children}) {
     const [isSummaryModalOpened, setIsSummaryModalOpened] = useState(false);
 
+    const toggleIsModalOpened = () => {
+        setIsSummaryModalOpened(prevState => !prevState);
+    }
+
     return (
         <PreturiContext.Provider value={{
             isSummaryModalOpened: isSummaryModalOpened,
-            setIsSummaryModalOpened: setIsSummaryModalOpened
+            setIsSummaryModalOpened: toggleIsModalOpened
         }}>
                 {children}
         </PreturiContext.Provider>

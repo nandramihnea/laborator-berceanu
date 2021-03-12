@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 
 export const HomeContext = createContext({
     isContactOpened: false,
@@ -25,10 +25,13 @@ export function HomeProvider({children}) {
         setSelectedAnalyzes([...selectedAnalyzes, selectedAnalyze]);
     }
 
-    function addToTotalPrice(newPrice) {
-        console.log('totalPrice', totalPrice)
-        setTotalPrice(totalPrice + newPrice);
-    }
+    useEffect(() => {
+        let totalPrice = 0;
+        selectedAnalyzes.forEach(analyze => {
+            totalPrice = totalPrice + analyze.price;
+        })
+        setTotalPrice(totalPrice);
+    }, [selectedAnalyzes])
 
     return (
         <HomeContext.Provider value={{
@@ -38,8 +41,7 @@ export function HomeProvider({children}) {
                 setIsModalOpened: toggleIsModalOpened,
                 selectedAnalyzes: selectedAnalyzes,
                 setSelectedAnalyzes: addToSelectedAnalyze,
-                totalPrice: totalPrice,
-                setTotalPrice: addToTotalPrice
+                totalPrice: totalPrice
             }}>
                 {children}
         </HomeContext.Provider>

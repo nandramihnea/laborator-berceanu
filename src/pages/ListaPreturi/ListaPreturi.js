@@ -9,7 +9,6 @@ import ProgressBar from './ProgressBar/ProgressBar';
 
 const ListaPreturi = () => {
     const {selectedAnalyzes, setSelectedAnalyzes} = useContext(HomeContext);
-    const {totalPrice, setTotalPrice} = useContext(HomeContext);
 
     const mask = {
         1: "Analiză decontată în baza biletului de trimitere de la medicul de familie",
@@ -20,7 +19,6 @@ const ListaPreturi = () => {
     }
 
     const onElementClickHandler = (analyze) => {
-        setTotalPrice(analyze.price);
         setSelectedAnalyzes(analyze);
     }
 

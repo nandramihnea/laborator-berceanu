@@ -1,13 +1,20 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import { HomeContext } from '../../../context/HomeContext';
+
+import SumarAnalize from '../SumarAnalize/SumarAnalize';
+import Modal from '../Modal';
 
 import classes from './ListaPreturiFooter.module.css';
 
 const ListaPreturiFooter = () => {
     const {totalPrice} = useContext(HomeContext);
+    // const {isSummaryModalOpened, setIsSummaryModalOpened} = useContext(PreturiContext);
+
+    const [isSummaryModalOpened, setIsSummaryModalOpened] = useState(false);
 
     const handleButtonClick = () => {
-
+        setIsSummaryModalOpened(true);
+        console.log('isSummaryModalOpened', isSummaryModalOpened)
     }
 
     return (
@@ -20,8 +27,9 @@ const ListaPreturiFooter = () => {
             <button
                 className="px-4 py-4 bg-primary-7 text-primary-0 rounded-md text-sm tracking-wider"
                 onClick={handleButtonClick} >
-                SUMAR ANALIZE
+                    SUMAR ANALIZE
             </button>
+            {isSummaryModalOpened && <Modal><SumarAnalize /></Modal> }
         </div>
     )
 }
