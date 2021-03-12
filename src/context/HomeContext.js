@@ -3,13 +3,15 @@ import React, { useState, createContext } from 'react';
 export const HomeContext = createContext({
     isContactOpened: false,
     isModalOpened: false,
-    selectedAnalyzes: null
+    selectedAnalyzes: null,
+    totalPrice: 0
 });
 
 export function HomeProvider({children}) {
     const [isContactOpened, setIsContactOpened] = useState(false);
     const [isModalOpened, setIsModalOpened] = useState(false);
     const [selectedAnalyzes, setSelectedAnalyzes] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
 
     function toggleIsContactOpened() {
         setIsContactOpened(prevIsContactOpened => !prevIsContactOpened);
@@ -23,6 +25,11 @@ export function HomeProvider({children}) {
         setSelectedAnalyzes([...selectedAnalyzes, selectedAnalyze]);
     }
 
+    function addToTotalPrice(newPrice) {
+        console.log('totalPrice', totalPrice)
+        setTotalPrice(totalPrice + newPrice);
+    }
+
     return (
         <HomeContext.Provider value={{
                 isContactOpened: isContactOpened,
@@ -30,7 +37,9 @@ export function HomeProvider({children}) {
                 isModalOpened: isModalOpened,
                 setIsModalOpened: toggleIsModalOpened,
                 selectedAnalyzes: selectedAnalyzes,
-                setSelectedAnalyzes: addToSelectedAnalyze
+                setSelectedAnalyzes: addToSelectedAnalyze,
+                totalPrice: totalPrice,
+                setTotalPrice: addToTotalPrice
             }}>
                 {children}
         </HomeContext.Provider>

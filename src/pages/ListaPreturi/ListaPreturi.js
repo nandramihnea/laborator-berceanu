@@ -3,13 +3,13 @@ import ReactTooltip from "react-tooltip";
 
 import {analyzes} from '../../assets/listaPreturi';
 import { HomeContext } from '../../context/HomeContext';
-import { PreturiContext } from '../../context/PreturiContext';
 
 import classes from './ListaPreturi.module.css';
 import ProgressBar from './ProgressBar/ProgressBar';
 
 const ListaPreturi = () => {
     const {selectedAnalyzes, setSelectedAnalyzes} = useContext(HomeContext);
+    const {totalPrice, setTotalPrice} = useContext(HomeContext);
 
     const mask = {
         1: "Analiză decontată în baza biletului de trimitere de la medicul de familie",
@@ -20,8 +20,7 @@ const ListaPreturi = () => {
     }
 
     const onElementClickHandler = (analyze) => {
-        const found = selectedAnalyzes.find(item => item.id === analyze.id);
-        console.log('found', found)
+        setTotalPrice(analyze.price);
         setSelectedAnalyzes(analyze);
     }
 
@@ -41,12 +40,6 @@ const ListaPreturi = () => {
     //     setElementsArray(newArray);
     //     setTotalPrice(totalPrice - elementsArray[clickedElement].price);
     // };
-
-    let selected = selectedAnalyzes.map(item => {
-        return (
-            <div key={item.id}>{item.price}</div>
-        )
-    })
 
     const priceList = analyzes.map(type => {
         let content = (
@@ -78,7 +71,6 @@ const ListaPreturi = () => {
 
     return (
         <div className={classes.container}>
-            {selected}
             <ProgressBar />
             <div>
                 {priceList}
