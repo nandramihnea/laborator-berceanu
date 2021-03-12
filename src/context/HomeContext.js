@@ -1,28 +1,38 @@
-import React, { useContext, useState, createContext } from 'react';
+import React, { useState, createContext } from 'react';
 
-const HomeContext = createContext();
-const HomeContextUpdate = createContext();
-
-export function useHomeContext() {
-    return useContext(HomeContext);
-}
-
-export function useHomeContextUpdate() {
-    return useContext(HomeContextUpdate);
-}
+export const HomeContext = createContext({
+    isContactOpened: false,
+    isModalOpened: false,
+    selectedAnalyzes: null
+});
 
 export function HomeProvider({children}) {
     const [isContactOpened, setIsContactOpened] = useState(false);
+    const [isModalOpened, setIsModalOpened] = useState(false);
+    const [selectedAnalyzes, setSelectedAnalyzes] = useState([]);
 
     function toggleIsContactOpened() {
         setIsContactOpened(prevIsContactOpened => !prevIsContactOpened);
     }
 
+    function toggleIsModalOpened() {
+        setIsModalOpened(prevIsModalOpened => !prevIsModalOpened);
+    }
+
+    function addToSelectedAnalyze(selectedAnalyze) {
+        setSelectedAnalyzes([...selectedAnalyzes, selectedAnalyze]);
+    }
+
     return (
-        <HomeContext.Provider value={isContactOpened}>
-            <HomeContextUpdate.Provider value={toggleIsContactOpened}>
+        <HomeContext.Provider value={{
+                isContactOpened: isContactOpened,
+                setIsContactOpened: toggleIsContactOpened,
+                isModalOpened: isModalOpened,
+                setIsModalOpened: toggleIsModalOpened,
+                selectedAnalyzes: selectedAnalyzes,
+                setSelectedAnalyzes: addToSelectedAnalyze
+            }}>
                 {children}
-            </HomeContextUpdate.Provider>
         </HomeContext.Provider>
     )
 }

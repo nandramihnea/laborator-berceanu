@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import ReactTooltip from "react-tooltip";
 
 import {analyzes} from '../../assets/listaPreturi';
-import Calculator from './Calculator/Calculator';
+import { HomeContext } from '../../context/HomeContext';
+import { PreturiContext } from '../../context/PreturiContext';
 
 import classes from './ListaPreturi.module.css';
 import ProgressBar from './ProgressBar/ProgressBar';
 
 const ListaPreturi = () => {
-    const [selectedElement, setSelectedElement] = useState({});
+    const {selectedAnalyzes, setSelectedAnalyzes} = useContext(HomeContext);
 
     const mask = {
         1: "Analiză decontată în baza biletului de trimitere de la medicul de familie",
@@ -19,13 +20,38 @@ const ListaPreturi = () => {
     }
 
     const onElementClickHandler = (analyze) => {
-        setSelectedElement(analyze);
+        const found = selectedAnalyzes.find(item => item.id === analyze.id);
+        console.log('found', found)
+        setSelectedAnalyzes(analyze);
     }
+
+    // const addEntryHandler = (clickedElement) => {
+    //     let price = totalPrice;
+    //     if(Object.keys(selectedAnalyze).length !== 0) {
+    //         if(!elementsArray.includes(selectedAnalyze)) {
+    //             setElementsArray([...elementsArray, selectedAnalyze]);
+    //             price = price + selectedAnalyze.price;
+    //             setTotalPrice(price);
+    //         }
+    //     }
+    // };
+
+    // const deleteEntryHandler = (clickedElement) => {
+    //     const newArray = elementsArray.filter((item, index) => index !== clickedElement);
+    //     setElementsArray(newArray);
+    //     setTotalPrice(totalPrice - elementsArray[clickedElement].price);
+    // };
+
+    let selected = selectedAnalyzes.map(item => {
+        return (
+            <div key={item.id}>{item.price}</div>
+        )
+    })
 
     const priceList = analyzes.map(type => {
         let content = (
             <div key={type.name} className={classes.list + ' mt-8'}>
-                <h3 className={classes.header + ' small mr-8'}>{type.name}</h3>
+                <h3 className={classes.header + ' small mr-6'}>{type.name}</h3>
                 <div>
                     {type.analyzes.map((analyze) => {
                         let row = (
@@ -52,6 +78,7 @@ const ListaPreturi = () => {
 
     return (
         <div className={classes.container}>
+            {selected}
             <ProgressBar />
             <div>
                 {priceList}
@@ -61,9 +88,6 @@ const ListaPreturi = () => {
                 id="tooltip"
                 place="top"
                 type="light" />
-            <Calculator
-                selectedElement={selectedElement}
-                analyzes={analyzes} />
         </div>
     )
 }

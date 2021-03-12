@@ -1,21 +1,30 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
+
+import {analyzes} from '../../../assets/listaPreturi';
+
+import { PreturiContext } from '../../../context/PreturiContext';
 import classes from './Calculator.module.css';
 
-const Calculator = (props) => {
+const Calculator = () => {
     const [elementsArray, setElementsArray] = useState([]);
-    const [totalPrice, setTotalPrice] = useState(8);
+    const {totalPrice, setTotalPrice} = useContext(PreturiContext);
+    const {selectedAnalyze} = useContext(PreturiContext);
 
     useEffect(() => {
+        addEntryHandler();
+        // eslint-disable-next-line
+    }, [selectedAnalyze]);
+
+    const addEntryHandler = (clickedElement) => {
         let price = totalPrice;
-        if(Object.keys(props.selectedElement).length !== 0) {
-            if(!elementsArray.includes(props.selectedElement)) {
-                setElementsArray([...elementsArray, props.selectedElement]);
-                price = price + props.selectedElement.price;
+        if(Object.keys(selectedAnalyze).length !== 0) {
+            if(!elementsArray.includes(selectedAnalyze)) {
+                setElementsArray([...elementsArray, selectedAnalyze]);
+                price = price + selectedAnalyze.price;
                 setTotalPrice(price);
             }
         }
-        // eslint-disable-next-line
-    }, [props.selectedElement]);
+    };
 
     const deleteEntryHandler = (clickedElement) => {
         const newArray = elementsArray.filter((item, index) => index !== clickedElement);
@@ -24,7 +33,7 @@ const Calculator = (props) => {
     };
 
     return (
-        <div className={classes.container + ' small mt-8 py-20 px-6'}>
+        <div className={classes.container + ' small mt-8 py-20 pl-10 pr-2'}>
             <div className={classes.content}>
                 <div className={classes.header + ' grid justify-between mt-1'}>
                     <span>Recoltare</span>

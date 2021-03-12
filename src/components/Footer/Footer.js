@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
 import { useHistory } from 'react-router-dom';
 import { motion } from "framer-motion";
 
@@ -7,11 +7,11 @@ import { borzesti, teiului } from '../../assets/contactInfo';
 import {ReactComponent as Logo} from '../../assets/icons/logo.svg';
 
 import Contact from '../Contact/Contact';
-import { useHomeContext, useHomeContextUpdate } from '../../context/HomeContext';
+
+import {HomeContext} from '../../context/HomeContext'
 
 const Footer = () => {
-    const isContactOpened = useHomeContext();
-    const toggleIsContactOpened = useHomeContextUpdate();
+    const {isContactOpened, setIsContactOpened} = useContext(HomeContext);
 
     let history = useHistory();
 
@@ -20,7 +20,7 @@ const Footer = () => {
     }
 
     const handleContactClick = () => {
-        toggleIsContactOpened(isContactOpened);
+        setIsContactOpened(isContactOpened);
     }
 
     const variants = {
