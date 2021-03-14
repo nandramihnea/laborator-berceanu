@@ -6,12 +6,14 @@ import Modal from '../Modal';
 
 import classes from './ListaPreturiFooter.module.css';
 import SumarAnalizeFooter from '../SumarAnalizeFooter/SumarAnalizeFooter';
+import { PreturiContext } from '../../../context/PreturiContext';
 
 const ListaPreturiFooter = () => {
     const {totalPrice} = useContext(HomeContext);
     const {selectedAnalyzes} = useContext(HomeContext);
+    const {isSummaryModalOpened, setIsSummaryModalOpened} = useContext(PreturiContext);
 
-    const [isSummaryModalOpened, setIsSummaryModalOpened] = useState(false);
+    // const [isSummaryModalOpened, setIsSummaryModalOpened] = useState(false);
 
     const handleButtonClick = () => {
         setIsSummaryModalOpened(true);
@@ -31,7 +33,7 @@ const ListaPreturiFooter = () => {
                         SUMAR ANALIZE
                 </button>
             }
-            {isSummaryModalOpened && <Modal footer={<SumarAnalizeFooter />}><SumarAnalize /></Modal> }
+            {isSummaryModalOpened && <Modal modalId="sumarAnalize" footer={<SumarAnalizeFooter />}><SumarAnalize /></Modal> }
         </div>
     )
 }

@@ -21,7 +21,7 @@ const Home = () => {
                 <Hero />
                 <Acreditari />
                 <PreturiProvider>
-                    <Modal footer={<ListaPreturiFooter />}>
+                    <Modal modalId="listaPreturi" footer={<ListaPreturiFooter />}>
                         <ListaPreturi />
                     </Modal>
                 </PreturiProvider>

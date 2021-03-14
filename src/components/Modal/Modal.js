@@ -16,7 +16,8 @@ const Modal = (props) => {
         }
     }, [isModalOpened])
 
-    const handleClick = () => {
+    const handleClick = (event) => {
+        console.log(`event.target`, event.target)
         setIsModalOpened(false);
     }
 
@@ -24,9 +25,9 @@ const Modal = (props) => {
         isModalOpened ?
             <>
                 <Backdrop />
-                <div className={classes.wrapper + ' fixed z-50'}>
+                <div id={props.modalId} className={classes.wrapper + ' fixed z-50'}>
                     <div className="w-full flex justify-end p-6">
-                        <div onClick={handleClick} className={classes.close}></div>
+                        <div onClick={(event) => handleClick(event)} className={classes.close}></div>
                     </div>
                     <div className={classes.modal + ' px-8 mb-3'}>
                         {props.children}

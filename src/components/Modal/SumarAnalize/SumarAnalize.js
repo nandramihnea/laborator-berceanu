@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 
 import { HomeContext } from '../../../context/HomeContext';
+import SumarEmptyState from '../../EmptyState/SumarEmptyState/SumarEmptyState';
 
 import classes from './SumarAnalize.module.css';
 
@@ -27,7 +28,7 @@ const SumarAnalize = () => {
 
     return (
         <div>
-            {analize}
+            {selectedAnalyzes.length>0 ? analize : <SumarEmptyState />}
         </div>
     )
 }
