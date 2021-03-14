@@ -21,11 +21,11 @@ export function HomeProvider({children}) {
         setIsModalOpened(prevIsModalOpened => !prevIsModalOpened);
     }
 
-    function updateSelectedAnalyzes(selectedAnalyze) {
-        if(selectedAnalyze.length > 1) {
+    function updateSelectedAnalyzes(selectedAnalyze, isDelete = false) {
+        if(isDelete) {
             setSelectedAnalyzes(selectedAnalyze);
         } else {
-            setSelectedAnalyzes([...selectedAnalyzes, selectedAnalyze])
+            setSelectedAnalyzes([...selectedAnalyzes, selectedAnalyze]);
         }
     }
 

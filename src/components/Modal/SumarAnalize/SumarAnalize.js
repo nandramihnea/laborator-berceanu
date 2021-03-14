@@ -9,7 +9,7 @@ const SumarAnalize = () => {
 
     const deleteEntryHandler = (analyze) => {
         const newArray = selectedAnalyzes.filter(item => item.id !== analyze.id);
-        setSelectedAnalyzes(newArray);
+        setSelectedAnalyzes(newArray, true);
     };
 
     let analize = selectedAnalyzes.map((element, index) => {
