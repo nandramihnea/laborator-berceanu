@@ -28,7 +28,7 @@ const Modal = (props) => {
                     <div className="w-full flex justify-end p-6">
                         <div onClick={handleClick} className={classes.close}></div>
                     </div>
-                    <div className={classes.modal + ' px-6 mb-3'}>
+                    <div className={classes.modal + ' px-8 mb-3'}>
                         {props.children}
                     </div>
                     {props.footer && props.footer}

@@ -5,7 +5,6 @@ import {analyzes} from '../../assets/listaPreturi';
 import { HomeContext } from '../../context/HomeContext';
 
 import classes from './ListaPreturi.module.css';
-import ProgressBar from './ProgressBar/ProgressBar';
 
 const ListaPreturi = () => {
     const {selectedAnalyzes, setSelectedAnalyzes} = useContext(HomeContext);
@@ -19,25 +18,20 @@ const ListaPreturi = () => {
     }
 
     const onElementClickHandler = (analyze) => {
-        setSelectedAnalyzes(analyze);
+        if(selectedAnalyzes.length !== 0) {
+            if(!alreadyExists(selectedAnalyzes, analyze)) {
+                setSelectedAnalyzes(analyze);
+            }
+        } else {
+            setSelectedAnalyzes(analyze);
+        }
     }
 
-    // const addEntryHandler = (clickedElement) => {
-    //     let price = totalPrice;
-    //     if(Object.keys(selectedAnalyze).length !== 0) {
-    //         if(!elementsArray.includes(selectedAnalyze)) {
-    //             setElementsArray([...elementsArray, selectedAnalyze]);
-    //             price = price + selectedAnalyze.price;
-    //             setTotalPrice(price);
-    //         }
-    //     }
-    // };
+    const alreadyExists = (array, item) => {
+        const exists =  array.includes(item);
 
-    // const deleteEntryHandler = (clickedElement) => {
-    //     const newArray = elementsArray.filter((item, index) => index !== clickedElement);
-    //     setElementsArray(newArray);
-    //     setTotalPrice(totalPrice - elementsArray[clickedElement].price);
-    // };
+        return exists;
+    }
 
     const priceList = analyzes.map(type => {
         let content = (
@@ -69,7 +63,6 @@ const ListaPreturi = () => {
 
     return (
         <div className={classes.container}>
-            <ProgressBar />
             <div>
                 {priceList}
             </div>

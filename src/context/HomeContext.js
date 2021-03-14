@@ -21,8 +21,12 @@ export function HomeProvider({children}) {
         setIsModalOpened(prevIsModalOpened => !prevIsModalOpened);
     }
 
-    function addToSelectedAnalyze(selectedAnalyze) {
-        setSelectedAnalyzes([...selectedAnalyzes, selectedAnalyze]);
+    function updateSelectedAnalyzes(selectedAnalyze) {
+        if(selectedAnalyze.length > 1) {
+            setSelectedAnalyzes(selectedAnalyze);
+        } else {
+            setSelectedAnalyzes([...selectedAnalyzes, selectedAnalyze])
+        }
     }
 
     useEffect(() => {
@@ -40,7 +44,7 @@ export function HomeProvider({children}) {
                 isModalOpened: isModalOpened,
                 setIsModalOpened: toggleIsModalOpened,
                 selectedAnalyzes: selectedAnalyzes,
-                setSelectedAnalyzes: addToSelectedAnalyze,
+                setSelectedAnalyzes: updateSelectedAnalyzes,
                 totalPrice: totalPrice
             }}>
                 {children}
