@@ -1,9 +1,11 @@
 import React, {useContext}  from 'react';
 import classes from './Backdrop.module.css';
 
-import {HomeContext} from '../../context/HomeContext';
+import { PreturiContext } from '../../context/PreturiContext';
+import { HomeContext } from '../../context/HomeContext';
 
 const Backdrop = () => {
+    const {isSummaryModalOpened} = useContext(PreturiContext);
     const {isModalOpened, setIsModalOpened} = useContext(HomeContext);
 
     const handleClick = () => {
@@ -11,11 +13,9 @@ const Backdrop = () => {
     };
 
     return (
-        isModalOpened ?
-            <div
-                className={classes.backdrop + ' fixed z-40 bg-neutral-9 opacity-80'}
-                onClick={handleClick}></div>
-            : null
+        <div
+            className={classes.backdrop + ' fixed z-40 bg-neutral-9 opacity-70'}
+            onClick={handleClick}></div>
     )
 }
 

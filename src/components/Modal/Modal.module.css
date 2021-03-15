@@ -4,9 +4,8 @@
     top: 50%;
     transform: translate(-50%, -50%);
     display: block;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
     width: 55vw;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.40), 0 10px 10px rgba(0,0,0,0.32);
 }
 
 .wrapper::-webkit-scrollbar-track
@@ -33,14 +32,14 @@
 }
 
 .modal {
-    max-height: 70vh;
+    height: 70vh;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
 .close {
-    width: 18px;
-    height: 18px;
+    width: 32px;
+    height: 32px;
     opacity: 1;
     display: grid;
 }
@@ -65,6 +64,14 @@
 
 .close:after {
     transform: rotate(-45deg);
+}
+
+.icon {
+    fill: #A61B1B;
+}
+
+.icon:hover {
+    opacity: 0.6;
 }
 
 @media(max-width: 1023px) {

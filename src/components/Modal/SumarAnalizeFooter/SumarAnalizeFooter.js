@@ -1,14 +1,11 @@
 import React, {useContext} from 'react';
 import { HomeContext } from '../../../context/HomeContext';
-import { PreturiContext } from '../../../context/PreturiContext';
 
 import classes from './SumarAnalizeFooter.module.css';
 
 const SumarAnalizeFooter = () => {
     const {totalPrice} = useContext(HomeContext);
     const {selectedAnalyzes} = useContext(HomeContext);
-    const {isSummaryModalOpened, setIsSummaryModalOpened} = useContext(PreturiContext);
-    console.log("🚀 ~ file: SumarAnalizeFooter.js ~ line 11 ~ SumarAnalizeFooter ~ isSummaryModalOpened", isSummaryModalOpened)
 
     const handleButtonClick = () => {
         
