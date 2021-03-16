@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import { HomeContext } from '../../../context/HomeContext';
 
 import SumarAnalize from '../SumarAnalize/SumarAnalize';
@@ -13,14 +13,12 @@ const ListaPreturiFooter = () => {
     const {selectedAnalyzes} = useContext(HomeContext);
     const {isSummaryModalOpened, setIsSummaryModalOpened} = useContext(PreturiContext);
 
-    // const [isSummaryModalOpened, setIsSummaryModalOpened] = useState(false);
-
     const handleButtonClick = () => {
         setIsSummaryModalOpened(true);
     }
 
     return (
-        <div className={classes.footer + ' grid p-6 items-baseline'}>
+        <div className={classes.footer + ' grid p-6 sm:py-3 sm:px-0 items-center'}>
             <div className="block">
                 <span className="tracking-wider">TOTAL: </span>
                 <span className="text-2xl font-bold text-primary-6 ml-2">{totalPrice}</span>
@@ -28,12 +26,16 @@ const ListaPreturiFooter = () => {
             </div>
             {selectedAnalyzes.length > 0 &&
                 <button
-                    className="px-4 py-4 bg-primary-7 text-primary-0 rounded-md text-sm tracking-wider"
+                    className="p-4 sm:p-3 bg-primary-7 text-primary-0 rounded-md text-sm sm:text-xs tracking-wider"
                     onClick={handleButtonClick} >
                         SUMAR ANALIZE
                 </button>
             }
-            {isSummaryModalOpened && <Modal modalId="sumarAnalize" footer={<SumarAnalizeFooter />}><SumarAnalize /></Modal> }
+            {isSummaryModalOpened &&
+                <Modal
+                    footer={<SumarAnalizeFooter />} >
+                        <SumarAnalize />
+                </Modal> }
         </div>
     )
 }

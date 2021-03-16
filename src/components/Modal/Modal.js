@@ -31,9 +31,9 @@ const Modal = (props) => {
     return (
         isModalOpened ?
             <>
-                <Backdrop />
+                {props.shouldRenderBackdrop && <Backdrop />}
                 <div id={props.modalId} className={classes.wrapper + ' fixed z-50'}>
-                    <div className={`w-full flex ${isSummaryModalOpened ? 'justify-between':'justify-end'} items-center p-6`}>
+                    <div className={`w-full flex ${isSummaryModalOpened ? 'justify-between':'justify-end'} items-center p-6 sm:p-4`}>
                         {isSummaryModalOpened &&
                             <button
                                 className={classes.icon + ' focus:outline-none'}
@@ -42,7 +42,7 @@ const Modal = (props) => {
                             </button>}
                         <div onClick={handleCloseClick} className={classes.close + ' justify-self-end'}></div>
                     </div>
-                    <div className={classes.modal + ' px-8 mb-3'}>
+                    <div className={classes.modal + ' px-8 sm:px-2 mb-3'}>
                         {props.children}
                     </div>
                     {props.footer && props.footer}

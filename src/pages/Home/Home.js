@@ -21,8 +21,10 @@ const Home = () => {
                 <Hero />
                 <Acreditari />
                 <PreturiProvider>
-                    <Modal modalId="listaPreturi" footer={<ListaPreturiFooter />}>
-                        <ListaPreturi />
+                    <Modal
+                        footer={<ListaPreturiFooter />}
+                        shouldRenderBackdrop >
+                            <ListaPreturi />
                     </Modal>
                 </PreturiProvider>
                 <Footer />

@@ -44,6 +44,10 @@
     grid-template-columns: repeat(2, min-content);
 }
 
+.currency {
+    font-size: 11px;
+}
+
 .tooltip {
     max-width: 36ch;
     text-align: justify;
