@@ -1,16 +1,21 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
-import { useHomeContext, useHomeContextUpdate } from '../../../context/HomeContext';
+import {HomeContext} from '../../../context/HomeContext';
 
 const NavItems = (props) => {
-    const isContactOpened = useHomeContext();
-    const toggleIsContactOpened = useHomeContextUpdate();
+    const {isContactOpened, setIsContactOpened} = useContext(HomeContext);
+    const {isModalOpened, setIsModalOpened} = useContext(HomeContext);
+
 
     const handleContactClick = () => {
-        toggleIsContactOpened(isContactOpened);
+        setIsContactOpened(isContactOpened);
+    }
+
+    const handlePreturiClick = () => {
+        setIsModalOpened(isModalOpened);
     }
 
     const variants = {
@@ -31,7 +36,7 @@ const NavItems = (props) => {
                 initial='hidden'
                 whileHover='hover'
                 className={props.classes + ' p-4'} >
-                    <Link to="/lista-preturi" className="text-lg sm:text-base">Prețuri</Link>
+                    <div onClick={handlePreturiClick} className="text-lg sm:text-base cursor-pointer">Prețuri</div>
             </motion.li>
             <motion.li
                 variants={variants}

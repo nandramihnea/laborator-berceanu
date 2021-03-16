@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import ReactTooltip from "react-tooltip";
 
 import {analyzes} from '../../assets/listaPreturi';
-import Calculator from './Calculator/Calculator';
+import { HomeContext } from '../../context/HomeContext';
 
 import classes from './ListaPreturi.module.css';
-import ProgressBar from './ProgressBar/ProgressBar';
 
 const ListaPreturi = () => {
-    const [selectedElement, setSelectedElement] = useState({});
+    const {selectedAnalyzes, setSelectedAnalyzes} = useContext(HomeContext);
 
     const mask = {
         1: "Analiză decontată în baza biletului de trimitere de la medicul de familie",
@@ -19,26 +18,42 @@ const ListaPreturi = () => {
     }
 
     const onElementClickHandler = (analyze) => {
-        setSelectedElement(analyze);
+        if(selectedAnalyzes.length !== 0) {
+            if(!alreadyExists(selectedAnalyzes, analyze)) {
+                setSelectedAnalyzes(analyze);
+            }
+        } else {
+            setSelectedAnalyzes(analyze);
+        }
+    }
+
+    const alreadyExists = (array, item) => {
+        const exists =  array.includes(item);
+
+        return exists;
     }
 
     const priceList = analyzes.map(type => {
         let content = (
             <div key={type.name} className={classes.list + ' mt-8'}>
-                <h3 className={classes.header + ' small mr-8'}>{type.name}</h3>
+                <h3 className={classes.header + ' small mr-6 sm:mr-2'}>{type.name}</h3>
                 <div>
                     {type.analyzes.map((analyze) => {
+                        let color = '';
+                        if(selectedAnalyzes.includes(analyze)) {
+                            color = 'text-primary-5 hover:text-primary-5 font-bold';
+                        }
                         let row = (
                             <div
                                 data-tip={mask[analyze.status]}
                                 data-for="tooltip"
                                 key={analyze.id}
                                 onClick={() => onElementClickHandler(analyze)}
-                                className={classes.row + ' gap-x-3 mb-2 hover:text-primary-5'}>
+                                className={classes.row + ` gap-x-3 mb-2 hover:text-primary-5 ${color}`}>
                                     <p>{analyze.name}</p>
-                                    <div className={classes.price + " grid gap-x-1 text-right"}>
+                                    <div className={classes.price + " grid gap-x-1 text-right items-baseline"}>
                                         <span>{analyze.price}</span>
-                                        <span>Lei</span>
+                                        <span className={classes.currency + " tracking-tight"}>RON</span>
                                     </div>
                             </div>
                         )
@@ -52,7 +67,6 @@ const ListaPreturi = () => {
 
     return (
         <div className={classes.container}>
-            <ProgressBar />
             <div>
                 {priceList}
             </div>
@@ -61,9 +75,6 @@ const ListaPreturi = () => {
                 id="tooltip"
                 place="top"
                 type="light" />
-            <Calculator
-                selectedElement={selectedElement}
-                analyzes={analyzes} />
         </div>
     )
 }

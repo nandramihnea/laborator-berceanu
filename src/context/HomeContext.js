@@ -1,28 +1,53 @@
-import React, { useContext, useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 
-const HomeContext = createContext();
-const HomeContextUpdate = createContext();
-
-export function useHomeContext() {
-    return useContext(HomeContext);
-}
-
-export function useHomeContextUpdate() {
-    return useContext(HomeContextUpdate);
-}
+export const HomeContext = createContext({
+    isContactOpened: false,
+    isModalOpened: false,
+    selectedAnalyzes: null,
+    totalPrice: 0
+});
 
 export function HomeProvider({children}) {
     const [isContactOpened, setIsContactOpened] = useState(false);
+    const [isModalOpened, setIsModalOpened] = useState(false);
+    const [selectedAnalyzes, setSelectedAnalyzes] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
 
     function toggleIsContactOpened() {
         setIsContactOpened(prevIsContactOpened => !prevIsContactOpened);
     }
 
+    function toggleIsModalOpened() {
+        setIsModalOpened(prevIsModalOpened => !prevIsModalOpened);
+    }
+
+    function updateSelectedAnalyzes(selectedAnalyze, isDelete = false) {
+        if(isDelete) {
+            setSelectedAnalyzes(selectedAnalyze);
+        } else {
+            setSelectedAnalyzes([...selectedAnalyzes, selectedAnalyze]);
+        }
+    }
+
+    useEffect(() => {
+        let totalPrice = 0;
+        selectedAnalyzes.forEach(analyze => {
+            totalPrice = totalPrice + analyze.price;
+        })
+        setTotalPrice(totalPrice);
+    }, [selectedAnalyzes])
+
     return (
-        <HomeContext.Provider value={isContactOpened}>
-            <HomeContextUpdate.Provider value={toggleIsContactOpened}>
+        <HomeContext.Provider value={{
+                isContactOpened: isContactOpened,
+                setIsContactOpened: toggleIsContactOpened,
+                isModalOpened: isModalOpened,
+                setIsModalOpened: toggleIsModalOpened,
+                selectedAnalyzes: selectedAnalyzes,
+                setSelectedAnalyzes: updateSelectedAnalyzes,
+                totalPrice: totalPrice
+            }}>
                 {children}
-            </HomeContextUpdate.Provider>
         </HomeContext.Provider>
     )
 }

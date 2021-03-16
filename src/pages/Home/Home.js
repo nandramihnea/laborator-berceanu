@@ -1,23 +1,32 @@
 import React from 'react';
 
+import { HomeProvider } from '../../context/HomeContext';
+import { PreturiProvider } from '../../context/PreturiContext';
 
 import Footer from '../../components/Footer/Footer';
 import Hero from '../../components/Hero/Hero';
+import Modal from '../../components/Modal/Modal';
 import Navigation from '../../components/Navigation/Navigation';
-import { HomeProvider } from '../../context/HomeContext';
 import Acreditari from '../Acreditari/Acreditari';
 import ListaPreturi from '../ListaPreturi/ListaPreturi';
+import ListaPreturiFooter from '../../components/Modal/ListaPreturiFooter/ListaPreturiFooter';
 
 import classes from './Home.module.css';
 
 const Home = () => {
     return (
         <HomeProvider>
-            <div className={classes.home + ' relative'}>
+            <div className={classes.home +  ' relative'}>
                 <Navigation />
                 <Hero />
                 <Acreditari />
-                {/* <ListaPreturi /> */}
+                <PreturiProvider>
+                    <Modal
+                        footer={<ListaPreturiFooter />}
+                        shouldRenderBackdrop >
+                            <ListaPreturi />
+                    </Modal>
+                </PreturiProvider>
                 <Footer />
             </div>
         </HomeProvider>
