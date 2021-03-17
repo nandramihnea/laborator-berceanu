@@ -12,7 +12,7 @@ const SumarAnalizeFooter = () => {
     }
 
     return (
-        <div className={classes.footer + ' grid p-6 sm:py-3 sm:px-0 items-center'}>
+        <div className={classes.footer + ' grid p-6 sm:py-4 sm:px-0 items-center'}>
             <div className="block">
                 <span className="tracking-wider">TOTAL: </span>
                 <span className="text-2xl font-bold text-primary-6 ml-2">{totalPrice}</span>
