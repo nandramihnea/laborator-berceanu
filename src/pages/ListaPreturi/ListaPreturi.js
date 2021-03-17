@@ -36,7 +36,7 @@ const ListaPreturi = () => {
     const priceList = analyzes.map(type => {
         let content = (
             <div key={type.name} className={classes.list + ' mt-8'}>
-                <h3 className={classes.header + ' small mr-6 sm:mr-2'}>{type.name}</h3>
+                <h3 className={classes.header + ' text-primary-5 mr-6 sm:mr-2'}>{type.name}</h3>
                 <div>
                     {type.analyzes.map((analyze) => {
                         let color = '';

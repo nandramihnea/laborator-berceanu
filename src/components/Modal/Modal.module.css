@@ -6,6 +6,9 @@
     display: block;
     width: 700px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.40), 0 10px 10px rgba(0,0,0,0.32);
+    display: grid;
+    grid-template-rows: max-content 1fr 102px;
+    height: 90vh;
 }
 
 .wrapper::-webkit-scrollbar-track
@@ -32,7 +35,6 @@
 }
 
 .modal {
-    height: 70vh;
     overflow-y: auto;
     overflow-x: hidden;
     display: grid;
@@ -89,9 +91,6 @@
         width: 100vw;
         height: 100vh;
         border-radius: 0;
-    }
-
-    .modal {
-        height: 83vh;
+        grid-template-rows: max-content 1fr 74px;
     }
 }
