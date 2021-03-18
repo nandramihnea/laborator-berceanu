@@ -41,6 +41,10 @@
     align-items: center;
 }
 
+.header {
+    grid-template-columns: 1fr max-content;
+}
+
 .close {
     width: 32px;
     height: 32px;
@@ -89,7 +93,7 @@
 @media(max-width: 670px) {
     .wrapper {
         width: 100vw;
-        height: 100vh;
+        height: -webkit-fill-available;
         border-radius: 0;
         grid-template-rows: max-content 1fr 74px;
     }
