@@ -1,0 +1,11 @@
+.search {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+}
+
+.icon {
+    fill: #D64545;
+}
+
+.input {
+}
