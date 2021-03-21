@@ -1,7 +1,6 @@
-export const analyzes = [
+[
   {
     "name": "EXTRA",
-    "isFullRow": true,
     "analyzes": [
       {
         "id": 1,
@@ -17,7 +16,6 @@ export const analyzes = [
   },
   {
     "name": "HEMATOLOGIE/COAGULARE",
-    "isFullRow": true,
     "analyzes": [
       {
         "id": 3,
@@ -65,7 +63,6 @@ export const analyzes = [
   },
   {
     "name": "BIOCHIMIE",
-    "isFullRow": true,
     "analyzes": [
       {
         "id": 10,
@@ -386,7 +383,6 @@ export const analyzes = [
   },
   {
     "name": "EXUDAT FARINGIAN",
-    "isFullRow": true,
     "analyzes": [
       {
         "id": 63,
@@ -404,7 +400,6 @@ export const analyzes = [
   },
   {
     "name": "EXAMEN URINĂ",
-    "isFullRow": true,
     "analyzes": [
       {
         "id": 65,
@@ -452,7 +447,6 @@ export const analyzes = [
   },
   {
     "name": "EXAMENE MATERII FECALE",
-    "isFullRow": true,
     "analyzes": [
       {
         "id": 72,
@@ -483,12 +477,11 @@ export const analyzes = [
         "name": "Antigen Helicobacter pylori (materii fecale)",
         "status": 3,
         "price": 55
-      },
+      }
     ]
   },
   {
     "name": "EXUDAT NAZAL",
-    "isFullRow": true,
     "analyzes": [
       {
         "id": 77,
@@ -506,7 +499,6 @@ export const analyzes = [
   },
   {
     "name": "EXAMENE SECREŢII VAGINALE",
-    "isFullRow": true,
     "analyzes": [
       {
         "id": 79,
@@ -530,7 +522,6 @@ export const analyzes = [
   },
   {
     "name": "EXAMENE SECREŢII URETRALE, OTICE, CONJUNCTIVALE ŞI COLECȚIE PURULENTĂ",
-    "isFullRow": true,
     "analyzes": [
       {
         "id": 82,
@@ -548,7 +539,6 @@ export const analyzes = [
   },
   {
     "name": "ANALIZE NEDECONTATE DE CAS",
-    "isFullRow": true,
     "analyzes": [
       {
         "id": 84,

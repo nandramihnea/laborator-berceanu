@@ -1,31 +1,41 @@
-import React, {useState} from 'react';
+import React, {useState, useContext, useRef} from 'react';
 
 import {ReactComponent as Icon} from '../../../assets/icons/search.svg';
 
 import classes from './Search.module.css';
 
-import {analyzes} from '../../../assets/listaPreturi';
+import { PreturiContext } from '../../../context/PreturiContext';
 
 const Search = () => {
     const [searchTerm, setSearchTerm] = useState('');
+    const {setListaAnalizeFiltered} = useContext(PreturiContext);
+    const {listaAnalize} = useContext(PreturiContext);
 
     const handleChange = (event) => {
         setSearchTerm(event.target.value);
-        dynamicSearch();
+        let filteredAnlayzes = dynamicSearch(event.target.value);
+        setListaAnalizeFiltered(filteredAnlayzes);
     };
 
-    const dynamicSearch = () => {
-        let result = analyzes.map(item => {
-            let filteredItems = item.analyzes.filter(element => {
-                let res = element.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const dynamicSearch = (searchValue) => {
+        // toate analizele
+        let filteredItems = listaAnalize.map(element => {
+            // element = toate analizele dintr-o anumita categorie
+            let newArray = element.analyzes.filter(subItem => {
+                /*
+                    cauta prin 'element' daca exista un item
+                    care sa fie egal cu ce e in search input
+                */
+                let result = subItem.name.toLowerCase().includes(searchValue.toLowerCase());
 
-                return res;
+                return result;
             })
-            return filteredItems;
+            // destructuez 'element', la care adaug rezultatul filtrarii, cu numele 'analyzes'
+            let result = {...element, analyzes: newArray}
+            return result;
         });
 
-        console.log(`result`, result)
-        return result;
+        return filteredItems;
     }
 
     return (
