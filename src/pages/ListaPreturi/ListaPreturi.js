@@ -1,13 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import ReactTooltip from "react-tooltip";
 
-import {analyzes} from '../../assets/listaPreturi';
 import { HomeContext } from '../../context/HomeContext';
+import { PreturiContext } from '../../context/PreturiContext';
 
 import classes from './ListaPreturi.module.css';
 
 const ListaPreturi = () => {
     const {selectedAnalyzes, setSelectedAnalyzes} = useContext(HomeContext);
+    const {setListaAnalize} = useContext(PreturiContext);
+    const {listaAnalizeFiltered} = useContext(PreturiContext);
 
     const mask = {
         1: "Analiză decontată în baza biletului de trimitere de la medicul de familie",
@@ -17,9 +19,27 @@ const ListaPreturi = () => {
         5: "Microalbuminuria (albumina urinară) și Creatinina urinară = Investigații paraclinice ce pot fi recomandate de medicii de familie, pentru asigurații care au evidențiat pe biletul de trimitere pentru investigații paraclinice management de caz pentru HTA, dislipidemie, diabet zaharat tip 2, astm bronşic, boala cronică respiratorie obstructivă (BPOC) și boala cronică de rinichi, după caz."
     }
 
+    useEffect(() => {
+        fetch('listaPreturi.json' ,{
+            headers : {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data) {
+                setListaAnalize(data);
+            });
+    }, [])
+
     const onElementClickHandler = (analyze) => {
         if(selectedAnalyzes.length !== 0) {
-            if(!alreadyExists(selectedAnalyzes, analyze)) {
+            if(selectedAnalyzes.includes(analyze)) {
+                const newArray = selectedAnalyzes.filter(item => item.id !== analyze.id);
+                setSelectedAnalyzes(newArray, true);
+            } else {
                 setSelectedAnalyzes(analyze);
             }
         } else {
@@ -27,43 +47,38 @@ const ListaPreturi = () => {
         }
     }
 
-    const alreadyExists = (array, item) => {
-        const exists =  array.includes(item);
-
-        return exists;
-    }
-
-    const priceList = analyzes.map(type => {
-        let content = (
-            <div key={type.name} className={classes.list + ' mt-8'}>
-                <h3 className={classes.header + ' text-primary-5 mr-6 sm:mr-2'}>{type.name}</h3>
-                <div>
-                    {type.analyzes.map((analyze) => {
-                        let color = '';
-                        if(selectedAnalyzes.includes(analyze)) {
-                            color = 'text-primary-5 hover:text-primary-5 font-bold';
-                        }
-                        let row = (
-                            <div
-                                data-tip={mask[analyze.status]}
-                                data-for="tooltip"
-                                key={analyze.id}
-                                onClick={() => onElementClickHandler(analyze)}
-                                className={classes.row + ` gap-x-3 mb-2 hover:text-primary-5 ${color}`}>
-                                    <p>{analyze.name}</p>
-                                    <div className={classes.price + " grid gap-x-1 text-right items-baseline"}>
-                                        <span>{analyze.price}</span>
-                                        <span className={classes.currency + " tracking-tight"}>RON</span>
-                                    </div>
-                            </div>
-                        )
-                        return row;
-                    })}
+    const priceList = (listaAnalizeFiltered.length &&
+        listaAnalizeFiltered.map(type => {
+            let content = (
+                <div key={type.name} className={classes.list + ' mt-8'}>
+                    {type.analyzes.length > 0 && <h3 className={classes.header + ' text-primary-5 mr-6 sm:mr-2'}>{type.name}</h3>}
+                    <div>
+                        {type.analyzes.map((analyze) => {
+                            let color = '';
+                            if(selectedAnalyzes.includes(analyze)) {
+                                color = 'text-primary-5 hover:text-primary-5 font-bold';
+                            }
+                            let row = (
+                                <div
+                                    data-tip={mask[analyze.status]}
+                                    data-for="tooltip"
+                                    key={analyze.id}
+                                    onClick={() => onElementClickHandler(analyze)}
+                                    className={classes.row + ` gap-x-3 mb-2 hover:text-primary-5 ${color}`}>
+                                        <p>{analyze.name}</p>
+                                        <div className={classes.price + " grid gap-x-1 text-right items-baseline"}>
+                                            <span>{analyze.price}</span>
+                                            <span className={classes.currency + " tracking-tight"}>RON</span>
+                                        </div>
+                                </div>
+                            )
+                            return row;
+                        })}
+                    </div>
                 </div>
-            </div>
-        );
+            );
         return content;
-    });
+    }));
 
     return (
         <div className={classes.container}>

@@ -13,7 +13,9 @@ const SumarEmptyState = () => {
     return (
         <div className="grid justify-items-center">
             <EmptySvg />
-            <h1 className="text-3xl sm:text-xl text-primary-5 py-10 sm:py-4 sm:mt-8">Ohh... Nu ai selectat niciun tip de analiză</h1>
+            <h1 className="text-3xl sm:text-xl text-primary-5 py-10 sm:py-6 sm:mt-8 text-center">
+                Ohh... nu ai selectat niciun <br className="hidden sm:block"/> tip de analiză
+            </h1>
             <p className="pb-10 sm:text-sm">
                 Mergi <span
                         className="font-bold hover:text-primary-5 cursor-pointer"
