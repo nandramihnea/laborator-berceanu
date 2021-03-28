@@ -2,14 +2,13 @@ import React, { useContext, useEffect } from 'react';
 import ReactTooltip from "react-tooltip";
 
 import { HomeContext } from '../../context/HomeContext';
-import { PreturiContext } from '../../context/PreturiContext';
 
 import classes from './ListaPreturi.module.css';
 
 const ListaPreturi = () => {
     const {selectedAnalyzes, setSelectedAnalyzes} = useContext(HomeContext);
-    const {setListaAnalize} = useContext(PreturiContext);
-    const {listaAnalizeFiltered} = useContext(PreturiContext);
+    const {setListaAnalize} = useContext(HomeContext);
+    const {listaAnalizeFiltered} = useContext(HomeContext);
 
     const mask = {
         1: "Analiză decontată în baza biletului de trimitere de la medicul de familie",
@@ -47,38 +46,40 @@ const ListaPreturi = () => {
         }
     }
 
-    const priceList = (listaAnalizeFiltered.length &&
-        listaAnalizeFiltered.map(type => {
-            let content = (
-                <div key={type.name} className={classes.list + ' mt-8'}>
-                    {type.analyzes.length > 0 && <h3 className={classes.header + ' text-primary-5 mr-6 sm:mr-2'}>{type.name}</h3>}
-                    <div>
-                        {type.analyzes.map((analyze) => {
-                            let color = '';
-                            if(selectedAnalyzes.includes(analyze)) {
-                                color = 'text-primary-5 hover:text-primary-5 font-bold';
-                            }
-                            let row = (
-                                <div
-                                    data-tip={mask[analyze.status]}
-                                    data-for="tooltip"
-                                    key={analyze.id}
-                                    onClick={() => onElementClickHandler(analyze)}
-                                    className={classes.row + ` gap-x-3 mb-2 hover:text-primary-5 ${color}`}>
-                                        <p>{analyze.name}</p>
-                                        <div className={classes.price + " grid gap-x-1 text-right items-baseline"}>
-                                            <span>{analyze.price}</span>
-                                            <span className={classes.currency + " tracking-tight"}>RON</span>
-                                        </div>
-                                </div>
-                            )
-                            return row;
-                        })}
-                    </div>
+    console.log(`listaAnalizeFiltered`, listaAnalizeFiltered)
+    console.log(`selectedAnalyzes`, selectedAnalyzes)
+    const priceList = (listaAnalizeFiltered.length ?
+        listaAnalizeFiltered.map(type => (
+            <div key={type.name} className={classes.list + ' mt-8'}>
+                {type.analyzes.length > 0 && <h3 className={classes.header + ' text-primary-5 mr-6 sm:mr-2'}>{type.name}</h3>}
+                <div>
+                    {type.analyzes.map((analyze) => {
+                        let color = '';
+
+                        if(selectedAnalyzes.includes(analyze)) {
+                            color = 'text-primary-5 hover:text-primary-5 font-bold';
+                        }
+                        let row = (
+                            <div
+                                data-tip={mask[analyze.status]}
+                                data-for="tooltip"
+                                key={analyze.id}
+                                onClick={() => onElementClickHandler(analyze)}
+                                className={classes.row + ` gap-x-3 mb-2 hover:text-primary-5 ${color}`}>
+                                    <p>{analyze.name}</p>
+                                    <div className={classes.price + " grid gap-x-1 text-right items-baseline"}>
+                                        <span>{analyze.price}</span>
+                                        <span className={classes.currency + " tracking-tight"}>RON</span>
+                                    </div>
+                            </div>
+                        )
+                        return row;
+                    })}
                 </div>
-            );
-        return content;
-    }));
+            </div>
+        ))
+        : <h1>Loading...</h1>
+    );
 
     return (
         <div className={classes.container}>

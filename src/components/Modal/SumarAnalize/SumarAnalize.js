@@ -2,34 +2,42 @@ import React, {useContext, useState} from 'react';
 
 import { HomeContext } from '../../../context/HomeContext';
 import SumarEmptyState from '../../EmptyState/SumarEmptyState/SumarEmptyState';
+import Modal from '../Modal';
 
 import {ReactComponent as Delete} from '../../../assets/icons/trash.svg';
 
 import classes from './SumarAnalize.module.css';
+import ConfirmDelete from '../ConfirmDelete/ConfirmDelete';
 
 const ItemsList = ({element, index}) => {
     const [isHovered, setIsHovered] = useState(false);
+    const [isConfirmModalOpened, setIsConfirmModalOpened] = useState(false);
+
     const {selectedAnalyzes, setSelectedAnalyzes} = useContext(HomeContext);
 
     const deleteEntryHandler = (analyze) => {
+        setIsConfirmModalOpened(prevState => !prevState);
         const newArray = selectedAnalyzes.filter(item => item.id !== analyze.id);
         setSelectedAnalyzes(newArray, true);
     };
 
     return (
-        <div
-            className={classes.row + ' grid justify-between items-baseline mt-1 px-2 cursor-pointer hover:text-primary-5 text-xl sm:text-lg'}
-            onClick={() => deleteEntryHandler(element)}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)} >
-                <span className="text-right">{index + 1}.</span>
-                <span className="mx-4 text-lg sm:text-base">{element.name}</span>
-                <div>
-                    <span>{element.price}</span>
-                    <span className={classes.currency + " tracking-tight ml-1"}>RON</span>
-                </div>
-                {isHovered && <Delete className={classes.svg + ' ml-2'} />}
-        </div>
+        <>
+            <div
+                className={classes.row + ' grid justify-between items-baseline mt-1 px-2 cursor-pointer hover:text-primary-5 text-xl sm:text-lg'}
+                onClick={() => deleteEntryHandler(element)}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)} >
+                    <span className="text-right">{index + 1}.</span>
+                    <span className="mx-4 text-lg sm:text-base">{element.name}</span>
+                    <div>
+                        <span>{element.price}</span>
+                        <span className={classes.currency + " tracking-tight ml-1"}>RON</span>
+                    </div>
+                    {isHovered && <Delete className={classes.svg + ' ml-2'} />}
+            </div>
+            {isConfirmModalOpened && <Modal><ConfirmDelete /></Modal>}
+        </>
     )
 }
 

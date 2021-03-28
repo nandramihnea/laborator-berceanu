@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import { HomeContext } from '../../../context/HomeContext';
+import PDFList from '../../PDFList/PDFList';
 
 import classes from './SumarAnalizeFooter.module.css';
 
@@ -8,7 +9,7 @@ const SumarAnalizeFooter = () => {
     const {selectedAnalyzes} = useContext(HomeContext);
 
     const handleButtonClick = () => {
-        
+        PDFList(selectedAnalyzes);
     }
 
     return (
@@ -18,13 +19,13 @@ const SumarAnalizeFooter = () => {
                 <span className="text-2xl font-bold text-primary-6 ml-2">{totalPrice}</span>
                 <span className="text-sm text-primary-6 ml-1 tracking-tight">RON</span>
             </div>
-            {selectedAnalyzes.length > 0 &&
+            {/* {selectedAnalyzes.length > 0 &&
                 <button
                     className="p-4 sm:p-3 bg-primary-7 text-primary-0 rounded-md text-sm sm:text-xs tracking-wider"
                     onClick={handleButtonClick} >
                         DESCARCĂ LISTA
                 </button>
-            }
+            } */}
         </div>
     )
 }

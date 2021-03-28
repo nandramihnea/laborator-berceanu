@@ -52,6 +52,13 @@ const NavItems = (props) => {
                 className={props.classes + ' p-4'} >
                     <Link to='/' className="text-lg sm:text-base">Acreditări</Link>
             </motion.li>
+            <motion.li
+                variants={variants}
+                initial='hidden'
+                whileHover='hover'
+                className={props.classes + ' p-4'} >
+                    <div onClick={handleContactClick} className="text-lg sm:text-base cursor-pointer">Cum recoltăm?</div>
+            </motion.li>
         </>
     )
 }
