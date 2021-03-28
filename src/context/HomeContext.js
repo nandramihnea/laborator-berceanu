@@ -4,7 +4,9 @@ export const HomeContext = createContext({
     isContactOpened: false,
     isModalOpened: false,
     selectedAnalyzes: null,
-    totalPrice: 0
+    totalPrice: 0,
+    listaAnalize: [],
+    listaAnalizeFiltered: []
 });
 
 export function HomeProvider({children}) {
@@ -12,6 +14,8 @@ export function HomeProvider({children}) {
     const [isModalOpened, setIsModalOpened] = useState(false);
     const [selectedAnalyzes, setSelectedAnalyzes] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
+    const [listaAnalize, setListaAnalize] = useState({});
+    const [listaAnalizeFiltered, setListaAnalizeFiltered] = useState({});
 
     function toggleIsContactOpened() {
         setIsContactOpened(prevIsContactOpened => !prevIsContactOpened);
@@ -29,6 +33,11 @@ export function HomeProvider({children}) {
         }
     }
 
+    // instantiaza 'listaAnalizeFiltered' cand se populeaza 'listaAnalize'
+    useEffect(() => {
+        setListaAnalizeFiltered(listaAnalize);
+    }, [listaAnalize])
+
     useEffect(() => {
         let totalPrice = 0;
         selectedAnalyzes.forEach(analyze => {
@@ -45,7 +54,11 @@ export function HomeProvider({children}) {
                 setIsModalOpened: toggleIsModalOpened,
                 selectedAnalyzes: selectedAnalyzes,
                 setSelectedAnalyzes: updateSelectedAnalyzes,
-                totalPrice: totalPrice
+                totalPrice: totalPrice,
+                listaAnalize: listaAnalize,
+                setListaAnalize: setListaAnalize,
+                listaAnalizeFiltered: listaAnalizeFiltered,
+                setListaAnalizeFiltered: setListaAnalizeFiltered
             }}>
                 {children}
         </HomeContext.Provider>

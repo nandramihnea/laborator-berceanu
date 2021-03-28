@@ -4,12 +4,12 @@ import {ReactComponent as Icon} from '../../../assets/icons/search.svg';
 
 import classes from './Search.module.css';
 
-import { PreturiContext } from '../../../context/PreturiContext';
+import { HomeContext } from '../../../context/HomeContext';
 
 const Search = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    const {setListaAnalizeFiltered} = useContext(PreturiContext);
-    const {listaAnalize} = useContext(PreturiContext);
+    const {setListaAnalizeFiltered} = useContext(HomeContext);
+    const {listaAnalize} = useContext(HomeContext);
 
     const handleChange = (event) => {
         setSearchTerm(event.target.value);
