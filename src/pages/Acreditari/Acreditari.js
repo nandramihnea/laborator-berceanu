@@ -11,7 +11,6 @@ const Acreditari = () => {
         <section className='md:my-14 my-24 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6'>
             <p className="sm:text-xl text-3xl text-primary-4 tracking-wide sm:mb-8 mb-16">
                 Laboratoarele noastre <br /> sunt acreditate RENAR
-                <span className="sm:ml-0 ml-2 sm:text-base text-2xl" role="img" aria-label="emoji" >&#128519;</span>
             </p>
             <div className={classes.wrapper + " grid justify-items-center"}>
                 <a href={Apostoli} target="_blank" rel="noopener noreferrer">

@@ -1,0 +1,12 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+
+li:last-of-type {
+    margin-bottom: 0;
+}
+
+.headers {
+    border-right: 2px solid #E66A6A;
+}

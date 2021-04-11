@@ -10,6 +10,7 @@ import Navigation from '../../components/Navigation/Navigation';
 import Acreditari from '../Acreditari/Acreditari';
 import ListaPreturi from '../ListaPreturi/ListaPreturi';
 import ListaPreturiFooter from '../../components/Modal/ListaPreturiFooter/ListaPreturiFooter';
+import Instructiuni from '../Instructiuni/Instructiuni';
 
 import classes from './Home.module.css';
 
@@ -18,8 +19,6 @@ const Home = () => {
         <HomeProvider>
             <div className={classes.home +  ' relative'}>
                 <Navigation />
-                <Hero />
-                <Acreditari />
                 <PreturiProvider>
                     <Modal
                         footer={<ListaPreturiFooter />}
@@ -27,6 +26,9 @@ const Home = () => {
                             <ListaPreturi />
                     </Modal>
                 </PreturiProvider>
+                <Hero />
+                <Acreditari />
+                <Instructiuni />
                 <Footer />
             </div>
         </HomeProvider>
