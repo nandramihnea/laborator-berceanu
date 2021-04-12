@@ -4,7 +4,7 @@ import classes from './Tabs.module.css'
 const Tabs = ({selected, setSelectedItem, tabs, ...props}) => {
     return (
         <div className={classes.wrapper}>
-            <ul className={classes.headers + " pr-8 md:mr-4"}>
+            <ul className={classes.headers + " pr-8 md:pr-0 md:mr-0 md:pb-4"}>
                 {tabs.map((tab, index) => {
                     const isActive = selected === index ? 'font-bold' : '';
 
@@ -21,7 +21,7 @@ const Tabs = ({selected, setSelectedItem, tabs, ...props}) => {
                     )
                 })}
             </ul>
-            <div className="py-10 ml-8">
+            <div className="py-10 ml-8 md:ml-0">
                 {props.children}
             </div>
         </div>
