@@ -19,6 +19,5 @@ li:last-of-type {
     .headers {
         border-bottom: 2px solid #E66A6A;
         border-right: none;
-        display: flex;
     }
 }

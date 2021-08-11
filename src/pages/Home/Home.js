@@ -13,6 +13,7 @@ import ListaPreturiFooter from '../../components/Modal/ListaPreturiFooter/ListaP
 import Instructiuni from '../Instructiuni/Instructiuni';
 
 import classes from './Home.module.css';
+import Program from '../Program/Program';
 
 const Home = () => {
     return (
@@ -27,6 +28,7 @@ const Home = () => {
                     </Modal>
                 </PreturiProvider>
                 <Hero />
+                <Program />
                 <Acreditari />
                 <Instructiuni />
                 <Footer />
