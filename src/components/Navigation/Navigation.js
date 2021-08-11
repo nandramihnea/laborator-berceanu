@@ -16,7 +16,7 @@ const Navigation = () => {
     window.addEventListener('resize', reportWindowSize);
 
     return (
-        <div className={classes.navigation + " sticky h-24 top-0 flex justify-end items-center z-30 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6"}>
+        <div className={classes.navigation + " sticky h-24 top-0 flex justify-end items-center z-30 md:w-auto mx-auto md:mx-12 sm:mx-6"}>
             {screenWidth > SCREEN_SIZE ? <NavDesktop /> : <NavMobile />}
         </div>
     )

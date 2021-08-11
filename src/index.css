@@ -5,6 +5,10 @@ body, html {
     /* overflow-y: auto; */
 }
 
+.slick-track {
+    width: 100% !important;
+}
+
 * {
     box-sizing: border-box;
 }

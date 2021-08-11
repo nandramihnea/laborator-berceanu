@@ -1,0 +1,23 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+
+li:last-of-type {
+    margin-bottom: 0;
+}
+
+.headers {
+    border-right: 2px solid #E66A6A;
+}
+
+@media (max-width: 1023px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .headers {
+        border-bottom: 2px solid #E66A6A;
+        border-right: none;
+    }
+}
