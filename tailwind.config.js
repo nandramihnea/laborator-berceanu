@@ -73,6 +73,10 @@ module.exports = {
     },
     extend: {},
   },
-  variants: {},
+  variants: {
+    extend: {
+      fontWeight: ['hover', 'focus']
+    }
+  },
   plugins: [],
 }
