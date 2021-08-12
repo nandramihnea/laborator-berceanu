@@ -8,7 +8,7 @@ import coverT from '../../assets/images/teiului.png';
 
 const Acreditari = () => {
     return (
-        <section className='md:my-14 my-24 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6'>
+        <section className='md:my-14 my-24 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6' id="acreditari">
             <p className="sm:text-xl text-3xl text-primary-4 tracking-wide sm:mb-8 mb-16">
                 Laboratoarele noastre <br /> sunt acreditate RENAR
             </p>
