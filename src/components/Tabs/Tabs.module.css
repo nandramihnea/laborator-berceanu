@@ -1,6 +1,6 @@
 .wrapper {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: max-content 1fr;
 }
 
 li:last-of-type {
@@ -11,7 +11,18 @@ li:last-of-type {
     border-right: 2px solid #E66A6A;
 }
 
-@media (max-width: 1023px) {
+.select {
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+}
+
+.select:focus,
+.select:active {
+    outline: none;
+}
+
+@media (max-width: 800px) {
     .wrapper {
         grid-template-columns: 1fr;
     }
