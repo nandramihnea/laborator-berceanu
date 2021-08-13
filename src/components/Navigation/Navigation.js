@@ -8,7 +8,6 @@ const Navigation = () => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
     const SCREEN_SIZE = 1023;
 
-
     const reportWindowSize = () => {
         setScreenWidth(window.innerWidth);
     }
