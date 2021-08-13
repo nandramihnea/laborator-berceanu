@@ -4,7 +4,7 @@ import { ReactComponent as Clock } from '../../assets/icons/watch.svg';
 
 const Program = () => {
     return (
-        <section className='bg-primary-3 relative'>
+        <section id="program" className='bg-primary-3 relative'>
             <Clock className={classes.icon} />
             <div className='md:mb-14 mb-24 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6'>
                 <p className="pt-12 pb-16 sm:mx-6 sm:text-xl text-3xl text-primary-0 tracking-wide text-right">

@@ -5,7 +5,7 @@ import source from '../../assets/images/login.png';
 
 const Rezultate = () => {
     return (
-        <section className='md:my-14 my-24 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6'>
+        <section id="rezultate" className='md:my-14 my-24 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6'>
             <p className="sm:text-xl text-3xl text-primary-4 tracking-wide sm:mb-8 mb-16">
                 Rezultate analize
             </p>
