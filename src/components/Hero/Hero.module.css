@@ -1,6 +1,6 @@
 .hero {
     display: flex;
-    height: 30%;
+    height: 27.3%;
     grid-column: center-start/center-end;
 }
 

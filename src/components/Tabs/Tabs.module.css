@@ -8,7 +8,9 @@ li:last-of-type {
 }
 
 .headers {
-    border-right: 2px solid #E66A6A;
+    border-right: 4px solid #F29B9B;
+    min-height: 620px;
+    display: grid;
 }
 
 .select {
