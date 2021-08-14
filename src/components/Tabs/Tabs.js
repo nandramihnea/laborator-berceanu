@@ -20,7 +20,7 @@ const Tabs = ({selected, setSelectedItem, tabs, ...props}) => {
     return (
         <div className={classes.wrapper}>
             {screenWidth > SCREEN_SIZE ?
-            <ul className={classes.headers + " md:mr-4 bg-primary-6 p-6"}>
+            <ul className={classes.headers + " md:mr-4 bg-primary-6 px-6 py-12"}>
                 {tabs.map((tab, index) => {
                     const isActive = selected === index ? '0' : '2';
 
