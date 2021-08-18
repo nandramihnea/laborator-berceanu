@@ -19,10 +19,6 @@
     justify-self: flex-end;
 }
 
-.logo > g {
-    fill: #D64545;
-}
-
 .wrapper {
     grid-template-rows: repeat(2, max-content);
     align-content: flex-end;

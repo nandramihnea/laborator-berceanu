@@ -1,5 +1,6 @@
 {
   "name": "laborator-berceanu",
+  "homepage": "https://laboratorberceanu.ro/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
