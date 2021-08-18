@@ -32,7 +32,7 @@ const ListaPreturi = () => {
                 // eslint-disable-next-line
                 setListaAnalize(data);
             });
-    }, [])
+    }, [setListaAnalize])
 
     const onElementClickHandler = (analyze) => {
         if(selectedAnalyzes.length !== 0) {
