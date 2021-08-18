@@ -29,6 +29,7 @@ const ListaPreturi = () => {
                 return response.json();
             })
             .then(function(data) {
+                // eslint-disable-next-line
                 setListaAnalize(data);
             });
     }, [])
@@ -46,8 +47,6 @@ const ListaPreturi = () => {
         }
     }
 
-    console.log(`listaAnalizeFiltered`, listaAnalizeFiltered)
-    console.log(`selectedAnalyzes`, selectedAnalyzes)
     const priceList = (listaAnalizeFiltered.length ?
         listaAnalizeFiltered.map(type => (
             <div key={type.name} className={classes.list + ' mt-8'}>
