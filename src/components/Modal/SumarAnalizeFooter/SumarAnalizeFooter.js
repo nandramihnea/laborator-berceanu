@@ -5,7 +5,7 @@ import classes from './SumarAnalizeFooter.module.css';
 
 const SumarAnalizeFooter = () => {
     const {totalPrice} = useContext(HomeContext);
-    const {selectedAnalyzes} = useContext(HomeContext);
+    // const {selectedAnalyzes} = useContext(HomeContext);
 
     return (
         <div className={classes.footer + ' grid p-6 sm:py-4 sm:px-0 items-center'}>

@@ -1,7 +1,6 @@
 import React, {useContext} from 'react';
 import { HashLink } from 'react-router-hash-link';
 
-import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
 import { HomeContext } from '../../../context/HomeContext';
