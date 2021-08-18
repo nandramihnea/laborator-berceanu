@@ -1,4 +1,4 @@
-import React, {useState, useContext, useRef} from 'react';
+import React, {useState, useContext} from 'react';
 
 import {ReactComponent as Icon} from '../../../assets/icons/search.svg';
 

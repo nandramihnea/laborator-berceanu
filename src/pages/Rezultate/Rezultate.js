@@ -17,6 +17,7 @@ const Rezultate = () => {
                         <a
                             href="https://www.rezultateanalize.ro"
                             target="_blank"
+                            rel="noopener noreferrer"
                             className={classes.link + ' ml-2 text-primary-3 font-bold'}>
                                 www.rezultateanalize.ro
                         </a>

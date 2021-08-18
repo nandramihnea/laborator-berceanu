@@ -27,12 +27,12 @@ const Tabs = ({selected, setSelectedItem, tabs, ...props}) => {
                     return (
                         <li
                             key={tab}
-                            className={`text-lg md:text-base text-primary-${isActive}`} >
-                                <a
+                            className={`text-lg md:text-base mb-4 text-primary-4 ${isActive}`} >
+                                <span
                                     className="cursor-pointer"
                                     onClick={() => setSelectedItem(index)} >
                                     {tab}
-                                </a>
+                                </span>
                         </li>
                     )
                 })}
