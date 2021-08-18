@@ -20,8 +20,8 @@ jobs:
       run: npm run build
 
     - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.1.0
-        with:
-          server: ftp.laboratorberceanu.ro
-          username: ${{ secrets.ftp_username }}
-          password: ${{ secrets.ftp_password }}
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+      server: ftp.laboratorberceanu.ro
+      username: ${{ secrets.ftp_username }}
+      password: ${{ secrets.ftp_password }}
