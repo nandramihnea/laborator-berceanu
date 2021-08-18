@@ -1,15 +1,15 @@
 .hero {
     display: flex;
-    height: 30%;
+    height: 27.3%;
     grid-column: center-start/center-end;
 }
 
 .teiului {
-    background: url('../../assets/images/1.jpg');
+    background: url('../../assets/images/img1.jpg');
 }
 
 .borzesti {
-    background: url('../../assets/images/2.jpg');
+    background: url('../../assets/images/img2.jpg');
 }
 
 .delimiter {
