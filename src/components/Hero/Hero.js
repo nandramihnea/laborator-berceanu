@@ -13,7 +13,6 @@ const Hero = () => {
 
     return (
         <section className={classes.hero + ' gap-x-1 max-h-screen'} >
-            DADADADADA
             <motion.div
                 className={classes.teiului + ' relative grid content-end'}
                 onMouseEnter={() => setIsFirstHovered(true)}
