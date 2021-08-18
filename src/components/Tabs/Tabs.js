@@ -20,9 +20,9 @@ const Tabs = ({selected, setSelectedItem, tabs, ...props}) => {
     return (
         <div className={classes.wrapper}>
             {screenWidth > SCREEN_SIZE ?
-            <ul className={classes.headers + " pr-8 md:mr-4 md:pb-4"}>
+            <ul className={classes.headers + " md:mr-4 bg-primary-6 px-6 py-12"}>
                 {tabs.map((tab, index) => {
-                    const isActive = selected === index ? 'font-bold' : '';
+                    const isActive = selected === index ? '0' : '2';
 
                     return (
                         <li
@@ -55,7 +55,7 @@ const Tabs = ({selected, setSelectedItem, tabs, ...props}) => {
                         )
                     })}
             </select></>}
-            <div className="ml-8 md:ml-4 max-w-prose">
+            <div className="py-6 pl-8 sm:pl-0 max-w-prose">
                 {props.children}
             </div>
         </div>
