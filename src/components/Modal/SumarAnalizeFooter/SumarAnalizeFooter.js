@@ -1,16 +1,11 @@
 import React, {useContext} from 'react';
 import { HomeContext } from '../../../context/HomeContext';
-import PDFList from '../../PDFList/PDFList';
 
 import classes from './SumarAnalizeFooter.module.css';
 
 const SumarAnalizeFooter = () => {
     const {totalPrice} = useContext(HomeContext);
     const {selectedAnalyzes} = useContext(HomeContext);
-
-    const handleButtonClick = () => {
-        PDFList(selectedAnalyzes);
-    }
 
     return (
         <div className={classes.footer + ' grid p-6 sm:py-4 sm:px-0 items-center'}>
