@@ -2,11 +2,11 @@ name: 🚀 Deploy website on push
 on:
   push:
     branches:
-      - deploy
+      - main
 
 jobs:
-  build:
-    name: 🔨 Build
+  web-deploy:
+    name: 🔨 Build & 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
 
@@ -19,28 +19,7 @@ jobs:
     - name: 🔨 Build App
       run: npm run build
 
-    - name: 🧨 Archive production artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: build
-        path: build
-
-  deploy:
-    name: 🏬 Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v2
-
-      - name: 🧨 Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: build
-          path: build
-
-      - name: 📂 Sync files
+    - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
           server: ftp.laboratorberceanu.ro
