@@ -15,6 +15,7 @@ import Instructiuni from '../Instructiuni/Instructiuni';
 import classes from './Home.module.css';
 import Program from '../Program/Program';
 import Rezultate from '../Rezultate/Rezultate';
+import Chestionar from '../Chestionar/Chestionar';
 
 const Home = () => {
     return (
@@ -33,6 +34,7 @@ const Home = () => {
                 <Acreditari />
                 <Instructiuni />
                 <Rezultate />
+                <Chestionar />
                 <Footer />
             </div>
         </HomeProvider>
