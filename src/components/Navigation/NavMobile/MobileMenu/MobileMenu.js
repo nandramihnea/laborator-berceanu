@@ -27,7 +27,7 @@ const MobileMenu = () => {
     return (
         <AnimatePresence>
             <motion.ul
-                className={classes.wrapper + ' bg-green-8 p-10 mt-8'}
+                className={classes.wrapper + ' bg-primary-8 p-10 mt-8'}
                 variants={variants}
                 initial='hidden'
                 animate='visible'

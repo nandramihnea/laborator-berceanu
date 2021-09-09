@@ -1,59 +1,90 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classes from './Chestionar.module.css';
 import Rating from '../../components/Rating/Rating';
 
-const NUMBER_OF_QUESTIONS = 5;
+const NUMBER_OF_QUESTIONS = 6;
 
 const Chestionar = () => {
     const [question, setQuestion] = useState(0);
+    const [isInputDirty, setIsInputDirty] = useState(false);
+    const [shouldShowNext, setShouldShowNext] = useState(false);
 
     const nextStep = () => {
         setQuestion(question + 1);
+        setIsInputDirty(false);
     }
 
-    const prevStep = () => {
-        setQuestion(question - 1);
+    const onChangeHandler = (value) => {
+        if(value !== '') {
+            setIsInputDirty(true);
+        } else {
+            setIsInputDirty(false);
+        }
     }
+
+    useEffect(() => {
+        if(isInputDirty) {
+            setShouldShowNext(true);
+        } else {
+            setShouldShowNext(false);
+        }
+    }, [isInputDirty])
 
     const renderQuestions = (
         <>
             <div className={classes.wrapper + ` ${question !== 0 ? 'hidden' : 'grid'}`}>
+                <label
+                    className="text-primary-5 text-2xl text-center mb-8"
+                    htmlFor="Nume" >
+                        Cum vă numiți?
+                </label>
+                <input
+                    type="text"
+                    name="Nume"
+                    onChange={e => onChangeHandler(e.target.value)}
+                    className={classes.nume + " pb-2 bg-primary-3 text-3xl"} />
+            </div>
+            <div className={classes.wrapper + ` ${question !== 1 ? 'hidden' : 'grid'}`}>
                 <p className="text-primary-0 text-2xl text-center mb-8">
                     Cât de mulțumit/ă sunteți de <span className='text-primary-7'>atitudinea personalului</span> nostru?
                 </p>
                 <Rating
+                    setIsInputDirty={setIsInputDirty}
                     number={question}
                     question='Cât de mulțumit/ă sunteți de atitudinea personalului nostru?' />
             </div>
-            <div className={classes.wrapper  + ` ${question !== 1 ? 'hidden' : 'grid'}`}>
+            <div className={classes.wrapper  + ` ${question !== 2 ? 'hidden' : 'grid'}`}>
                 <p className="text-primary-0 text-2xl text-center mb-8">
                     Cât de mulțumit/ă sunteți de <span className='text-primary-7'>modul de recoltare</span>?
                 </p>
                 <Rating
+                    setIsInputDirty={setIsInputDirty}
                     number={question + 1}
                     question='Cât de mulțumit/ă sunteți de modul de recoltare?' />
             </div>
-            <div className={classes.wrapper  + ` ${question !== 2 ? 'hidden' : 'grid'}`}>
+            <div className={classes.wrapper  + ` ${question !== 3 ? 'hidden' : 'grid'}`}>
                 <p className="text-primary-0 text-2xl text-center mb-8">
                     Cât de mulțumit/ă sunteți <span className='text-primary-7'>promptitudinea rezultatelor</span>?
                 </p>
                 <Rating
+                    setIsInputDirty={setIsInputDirty}
                     number={question + 2}
                     question='Cât de mulțumit/ă sunteți promptitudinea rezultatelor?' />
             </div>
-            <div className={classes.wrapper  + ` ${question !== 3 ? 'hidden' : 'grid'}`}>
+            <div className={classes.wrapper  + ` ${question !== 4 ? 'hidden' : 'grid'}`}>
                 <p className="text-primary-0 text-2xl text-center mb-8">
                     Cât de mulțumit/ă sunteți de <span className='text-primary-7'>forma si modul de prezentare a buletinului de rezultate</span>?
                 </p>
                 <Rating
+                    setIsInputDirty={setIsInputDirty}
                     number={question + 3}
                     question='Cât de mulțumit/ă sunteți de forma si modul de prezentare a buletinului de rezultate?' />
             </div>
-            <div className={classes.wrapper  + ` ${question !== 4 ? 'hidden' : 'grid'}`}>
+            <div className={classes.wrapper  + ` ${question !== 5 ? 'hidden' : 'grid'}`}>
                 <p className="text-primary-0 text-2xl text-center mb-8">Aveți vreo sugestie referitoare la îmbunătățirea activității noastre?</p>
                 <label className='w-7/12' htmlFor='textarea'>
                     <textarea
-                        autofocus
+                        autoFocus
                         className={classes.textarea + ' bg-primary-3 rounded-l-3xl'}
                         name="Aveți vreo sugestie referitoare la îmbunătățirea activității noastre?"></textarea>
                 </label>
@@ -62,7 +93,7 @@ const Chestionar = () => {
     )
 
     return (
-        <section id="program" className={classes.section + ' bg-primary-3 relative'}>
+        <section id="chestionar" className={classes.section + ' bg-primary-3 relative'}>
             <div className='md:mb-14 mb-24 pt-12 pb-16 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6'>
                 <p className="pb-16 sm:mx-6 sm:text-xl text-3xl text-primary-0 tracking-wide text-right">
                     Chestionar de satisfacție
@@ -73,18 +104,13 @@ const Chestionar = () => {
                     <input type="text" name="_honey" style={{display: 'none'}} />
                     <input type="hidden" name="_template" value="table" />
                     <input type="hidden" name="_subject" value="Răspuns nou pentru chestionarul de satisfacție!" />
-                    <input type="hidden" name="_next" value="http://localhost:3000/#"></input>
+                    <input type="hidden" name="_next" value="http://localhost:3000/#chestionar"></input>
 
                     {renderQuestions}
 
                     <div className={classes.buttons}>
-                        {question > 0 &&
-                            <p className={[classes.inapoi, classes.button, 'rounded-l-3xl'].join(' ')} onClick={prevStep}>
-                                Înapoi
-                            </p>
-                        }
                         {question < NUMBER_OF_QUESTIONS - 1 &&
-                            <p className={[classes.inainte, classes.button, 'rounded-r-3xl'].join(' ')} onClick={nextStep}>
+                            <p className={[classes.inainte, classes.button, `${!shouldShowNext && 'invisible'} rounded-r-3xl`].join(' ')} onClick={nextStep}>
                                 Înainte
                             </p>
                         }
@@ -94,7 +120,7 @@ const Chestionar = () => {
 
                     </div>
 
-                    <p className="text-primary-0 opacity-50 mt-8 text-center">{question + 1} din 5</p>
+                    <p className="text-primary-0 opacity-50 mt-8 text-center">{question + 1} din 6</p>
                 </form>
             </div>
         </section>

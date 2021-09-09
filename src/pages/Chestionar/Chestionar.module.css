@@ -1,5 +1,6 @@
 .section {
     border-top: 3px solid #BA2525;
+    min-height: 565px;
 }
 
 .buttons {
@@ -63,4 +64,20 @@
     border: 1px solid #A61B1B;
     color: #FFEEEE;
     font-size: 1.2rem;
+}
+
+.nume {
+    outline: none;
+    color: #FFEEEE;
+    text-align: center;
+    border-bottom: 2px solid #BA2525;
+}
+
+.nume:after {
+    content: '';
+    height: 30%;
+    width: 3px;
+    display: block;
+    transition: all 0.3s ease-out;
+    background-color: #D64545;
 }

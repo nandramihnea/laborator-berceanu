@@ -27,7 +27,7 @@ const Tabs = ({selected, setSelectedItem, tabs, ...props}) => {
                     return (
                         <li
                             key={tab}
-                            className={`text-lg md:text-base mb-4 text-primary-${isActive}`} >
+                            className={`text-xl md:text-base mb-4 text-primary-${isActive}`} >
                                 <span
                                     className="cursor-pointer"
                                     onClick={() => setSelectedItem(index)} >
