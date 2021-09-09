@@ -8,8 +8,8 @@ li:last-of-type {
 }
 
 .headers {
-    border-right: 4px solid #F29B9B;
-    min-height: 620px;
+    border-right: 4px solid #BA2525;
+    min-height: 756px;
     display: grid;
 }
 

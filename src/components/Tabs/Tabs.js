@@ -20,14 +20,14 @@ const Tabs = ({selected, setSelectedItem, tabs, ...props}) => {
     return (
         <div className={classes.wrapper}>
             {screenWidth > SCREEN_SIZE ?
-            <ul className={classes.headers + " md:mr-4 bg-primary-6 px-6 py-12"}>
+            <ul className={classes.headers + " md:mr-4 bg-primary-3 px-6 py-12"}>
                 {tabs.map((tab, index) => {
-                    const isActive = selected === index ? '0' : '2';
+                    const isActive = selected === index ? '9' : '0';
 
                     return (
                         <li
                             key={tab}
-                            className={`text-lg md:text-base mb-4 text-primary-4 ${isActive}`} >
+                            className={`text-xl md:text-base mb-4 text-primary-${isActive}`} >
                                 <span
                                     className="cursor-pointer"
                                     onClick={() => setSelectedItem(index)} >

@@ -73,6 +73,13 @@ const NavItems = (props) => {
                 className={props.classes + ' p-4'} >
                     <HashLink smooth to="#rezultate" className="text-lg sm:text-base cursor-pointer">Rezultate</HashLink>
             </motion.li>
+            <motion.li
+                variants={variants}
+                initial='hidden'
+                whileHover='hover'
+                className={props.classes + ' p-4'} >
+                    <HashLink smooth to="#chestionar" className="text-lg sm:text-base cursor-pointer">Chestionar</HashLink>
+            </motion.li>
         </>
     )
 }
