@@ -23,8 +23,8 @@ const Instructiuni = () => {
     }
 
     return (
-        <section className='md:my-18 my-24 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6' id="instructiuni-recoltare">
-            <p className="sm:text-xl text-3xl text-primary-4 tracking-wide sm:mb-8 mb-16 text-right">
+        <section className='md:my-24 my-48 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6' id="instructiuni-recoltare">
+            <p className="sm:text-xl text-3xl text-primary-4 tracking-wide sm:mb-14 mb-28 mt-24 text-right">
                 Instrucțiuni privind recoltarea<br /> probelor biologice
                 <span className="sm:ml-0 ml-2 sm:text-base text-2xl" role="img" aria-label="emoji" >🩸</span>
             </p>

@@ -52,3 +52,12 @@ input[class="super-sad"]:checked + svg,
 input[class="super-sad"]:focus + svg {
 	fill: #A61B1B;
 }
+
+@media (max-width: 670px) {
+    svg.faces {
+		height: 3.3rem;
+		width: 3.3rem;
+		margin: 0.3rem;
+    }
+}
+
