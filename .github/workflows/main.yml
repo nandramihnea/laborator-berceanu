@@ -25,4 +25,3 @@ jobs:
         server: ftp.laboratorberceanu.ro
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
-        server-dir: public_html/
