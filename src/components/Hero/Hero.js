@@ -28,7 +28,7 @@ const Hero = () => {
     return (
         <section className={classes.hero + ' gap-x-1 max-h-screen'} >
             <motion.div
-                className={classes.teiului + ' relative grid content-center tracking-widest relative'}
+                className={classes.teiului + ' relative grid justify-items-center tracking-widest relative'}
                 onMouseEnter={() => setIsFirstHovered(true)}
                 onMouseLeave={() => setIsFirstHovered(false)}
                 >
@@ -43,7 +43,7 @@ const Hero = () => {
                         </motion.span> : null}
             </motion.div>
             <motion.div
-                className={classes.borzesti + ' relative grid content-center tracking-widest relative'}
+                className={classes.borzesti + ' relative grid justify-items-center tracking-widest relative'}
                 onMouseEnter={() => setIsSecondHovered(true)}
                 onMouseLeave={() => setIsSecondHovered(false)} >
                     {isSecondHovered ? <ContactWidget data={borzesti} /> : null }
