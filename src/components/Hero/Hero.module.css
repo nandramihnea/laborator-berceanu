@@ -1,6 +1,6 @@
 .hero {
     display: flex;
-    height: 21.9%;
+    height: 16.1%;
     grid-column: center-start/center-end;
 }
 
@@ -28,7 +28,9 @@
 }
 
 .teiului:hover,
-.borzesti:hover {
+.borzesti:hover,
+.teiului:active,
+.borzesti:active {
     filter: none;
     flex: 1.5;
 }
@@ -51,9 +53,27 @@
     opacity: 0;
 }
 
+.name {
+    position: absolute;
+    bottom: 20%;
+    margin: 0 auto;
+}
+
 @media (max-width: 1023px) {
     .hero {
         display: grid;
     }
 }
 
+@media (max-width: 670px) {
+    .hero {
+        height: 20.1%;
+    }
+
+    .teiului:hover,
+    .borzesti:hover,
+    .teiului:active,
+    .borzesti:active {
+        flex: 1;
+    }
+}
