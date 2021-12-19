@@ -7,9 +7,9 @@ const Program = () => {
         <section id="program" className={classes.section + ' bg-primary-3 relative'}>
             <Clock className={classes.icon} />
             <div className='md:mb-14 mb-24 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6'>
-                <p className="pb-28 md:pb-20 sm:pb-14 pt-24 md:pt-16 sm:pt-12 sm:mx-6 sm:text-xl text-3xl text-primary-0 tracking-wide text-right">
+                <h1 className="pb-28 md:pb-20 sm:pb-14 pt-24 md:pt-16 sm:pt-12 sm:mx-6 sm:text-xl text-3xl text-primary-0 tracking-wide text-right">
                     Program de lucru
-                </p>
+                </h1>
                 <div className={classes.wrapper + ' pb-20'}>
                     <div className={classes.margin}>
                         <p className={classes.name + " text-lg md:text-base mb-8 text-primary-1"}>Strada Teiului</p>

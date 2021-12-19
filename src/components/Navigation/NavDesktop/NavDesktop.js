@@ -6,7 +6,7 @@ import classes from './NavDesktop.module.css';
 const NavDesktop = () => {
     return (
         <ul className={classes.navigation + ' bg-primary-8 rounded-l-full'}>
-            <NavItems classes='mx-4 text-primary-0 tracking-wide' />
+            <NavItems classes='mx-2 text-primary-0 tracking-wide' />
         </ul>
     )
 }

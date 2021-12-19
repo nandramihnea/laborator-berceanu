@@ -6,8 +6,11 @@ import source from '../../assets/images/login.png';
 const Rezultate = () => {
     return (
         <section id="rezultate" className='md:my-24 my-48 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6'>
-            <p className="sm:text-xl text-3xl text-primary-4 tracking-wide sm:mb-14 mb-28 mt-24">
+            <h1 className="sm:text-xl text-3xl text-primary-4 tracking-wide sm:mb-14 mb-28 mt-24">
                 Cum accesăm rezultatele analizelor?
+            </h1>
+            <p className='text-lg text-primary-3 mb-12 text-center'>
+                Pentru a accesa rezultate de la precedentele analize efectuate la laborator Dr. Berceanu urmați cei doi pași descriși mai jos.
             </p>
             <div className={classes.wrapper}>
                 <div className={classes.text}>

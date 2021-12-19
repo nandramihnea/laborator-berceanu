@@ -95,9 +95,9 @@ const Chestionar = () => {
     return (
         <section id="chestionar" className={classes.section + ' bg-primary-3 relative'}>
             <div className='md:mb-14 mb-24 pb-16 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6'>
-                <p className="pb-28 md:pb-20 sm:pb-14 pt-24 md:pt-16 sm:pt-12 sm:mx-6 sm:text-xl text-3xl text-primary-0 tracking-wide text-right">
+                <h1 className="pb-28 md:pb-20 sm:pb-14 pt-24 md:pt-16 sm:pt-12 sm:mx-6 sm:text-xl text-3xl text-primary-0 tracking-wide text-right">
                     Chestionar de satisfacție
-                </p>
+                </h1>
                 <form action="https://formsubmit.co/laboratorberceanu@gmail.com" method="POST">
                     {/* settings for formSubmit backend */}
                     <input type="hidden" name="_captcha" value="false" />
