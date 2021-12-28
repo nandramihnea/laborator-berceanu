@@ -12,7 +12,7 @@
 .button {
     border: 2px solid #BA2525;
     padding: 12px 24px;
-    color: #FFEEEE;
+    color: #FAF9F7;
     cursor: pointer;
 	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
@@ -25,9 +25,9 @@
 }
 
 .submit {
-    border: 2px solid #FFEEEE;
+    border: 2px solid #FAF9F7;
     padding: 12px 24px;
-    color: #FFEEEE;
+    color: #FAF9F7;
     background: #BA2525;
     cursor: pointer;
 	-webkit-transition: all 0.2s;
@@ -62,16 +62,16 @@
     padding: 24px;
     outline: none;
     border: 1px solid #A61B1B;
-    color: #FFEEEE;
+    color: #FAF9F7;
     font-size: 1.2rem;
 }
 
 .nume {
     outline: none;
-    color: #FFEEEE;
+    color: #FAF9F7;
     text-align: center;
     text-transform: capitalize;
-    border-bottom: 2px solid #BA2525;
+    border-bottom: 2px solid #911111;
 }
 
 .nume:after {

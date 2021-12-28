@@ -34,19 +34,18 @@ const Chestionar = () => {
         <>
             <div className={classes.wrapper + ` ${question !== 0 ? 'hidden' : 'grid'}`}>
                 <label
-                    className="text-primary-5 text-2xl sm:text-lg text-center mb-8"
-                    htmlFor="Nume" >
+                    className="text-primary-8 text-2xl sm:text-lg text-center mb-8" >
                         Cum vă numiți?
+                    <input
+                        type="text"
+                        name="Nume"
+                        onChange={e => onChangeHandler(e.target.value)}
+                        className={classes.nume + " pb-2 bg-primary-3 text-3xl sm:text-xl"} />
                 </label>
-                <input
-                    type="text"
-                    name="Nume"
-                    onChange={e => onChangeHandler(e.target.value)}
-                    className={classes.nume + " pb-2 bg-primary-3 text-3xl sm:text-xl"} />
             </div>
             <div className={classes.wrapper + ` ${question !== 1 ? 'hidden' : 'grid'}`}>
                 <p className="text-primary-0 text-2xl sm:text-lg text-center mb-8">
-                    Cât de mulțumit/ă sunteți de <span className='text-primary-7'>atitudinea personalului</span> nostru?
+                    Cât de mulțumit/ă sunteți de <span className='text-primary-8'>atitudinea personalului</span> nostru?
                 </p>
                 <Rating
                     setIsInputDirty={setIsInputDirty}
@@ -55,7 +54,7 @@ const Chestionar = () => {
             </div>
             <div className={classes.wrapper  + ` ${question !== 2 ? 'hidden' : 'grid'}`}>
                 <p className="text-primary-0 text-2xl sm:text-lg text-center mb-8">
-                    Cât de mulțumit/ă sunteți de <span className='text-primary-7'>modul de recoltare</span>?
+                    Cât de mulțumit/ă sunteți de <span className='text-primary-8'>modul de recoltare</span>?
                 </p>
                 <Rating
                     setIsInputDirty={setIsInputDirty}
@@ -64,7 +63,7 @@ const Chestionar = () => {
             </div>
             <div className={classes.wrapper  + ` ${question !== 3 ? 'hidden' : 'grid'}`}>
                 <p className="text-primary-0 text-2xl sm:text-lg text-center mb-8">
-                    Cât de mulțumit/ă sunteți <span className='text-primary-7'>promptitudinea rezultatelor</span>?
+                    Cât de mulțumit/ă sunteți <span className='text-primary-8'>promptitudinea rezultatelor</span>?
                 </p>
                 <Rating
                     setIsInputDirty={setIsInputDirty}
@@ -73,7 +72,7 @@ const Chestionar = () => {
             </div>
             <div className={classes.wrapper  + ` ${question !== 4 ? 'hidden' : 'grid'}`}>
                 <p className="text-primary-0 text-2xl sm:text-lg text-center mb-8">
-                    Cât de mulțumit/ă sunteți de <span className='text-primary-7'>forma si modul de prezentare a buletinului de rezultate</span>?
+                    Cât de mulțumit/ă sunteți de <span className='text-primary-8'>forma si modul de prezentare a buletinului de rezultate</span>?
                 </p>
                 <Rating
                     setIsInputDirty={setIsInputDirty}
@@ -95,7 +94,7 @@ const Chestionar = () => {
     return (
         <section id="chestionar" className={classes.section + ' bg-primary-3 relative'}>
             <div className='md:mb-14 mb-24 pb-16 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6'>
-                <h1 className="pb-28 md:pb-20 sm:pb-14 pt-24 md:pt-16 sm:pt-12 sm:mx-6 sm:text-xl text-3xl text-primary-0 tracking-wide text-right">
+                <h1 className="pb-28 md:pb-20 sm:pb-14 pt-24 md:pt-16 sm:pt-12 sm:mx-6 sm:text-xl text-3xl text-neutral-0 tracking-wide text-right">
                     Chestionar de satisfacție
                 </h1>
                 <form action="https://formsubmit.co/laboratorberceanu@gmail.com" method="POST">
@@ -120,7 +119,7 @@ const Chestionar = () => {
 
                     </div>
 
-                    <p className="text-primary-0 opacity-50 mt-8 text-center">{question + 1} din 6</p>
+                    <p className="text-neutral-0 opacity-90 mt-8 text-center">{question + 1} din 6</p>
                 </form>
             </div>
         </section>

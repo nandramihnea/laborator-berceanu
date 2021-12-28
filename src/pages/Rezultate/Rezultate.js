@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Rezultate.module.css';
 
-import source from '../../assets/images/login.png';
+import source from '../../assets/images/login.webp';
 
 const Rezultate = () => {
     return (
@@ -30,7 +30,12 @@ const Rezultate = () => {
                         În rubrica <span className="italic text-primary-3">Logare pacienti</span>, introduceți datele dumneavoastră</p>
                     <p><span className="font-bold text-primary-3 ml-12 md:ml-6">* Codul de securitate</span> îl primiți după efectuarea analizelor</p>
                 </div>
-                <img className={classes.img + " opacity-75"} src={source} alt="login" />
+                <img
+                    width='300'
+                    height='300'
+                    className={classes.img + " opacity-75"}
+                    src={source}
+                    alt="login" />
             </div>
         </section>
     )

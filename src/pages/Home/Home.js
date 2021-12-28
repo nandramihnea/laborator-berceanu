@@ -25,7 +25,7 @@ const Home = () => {
             <Seo
                 title='Laborator Clinic Dr. Berceanu | Analize Laborator Timisoara | Antigen & Anticorpi pentru COVID'
                 description='Cauți un loc unde îți poți face un set de analize medicale de calitate la un preț rezonabil în Timișoara?
-                Laborator Clinic Dr. Berceanu | zona LIPOVEI | zona Dacia'
+                Laborator Clinic Dr. Berceanu | zona LIPOVEI | zona DACIA'
                 canonUrl='https://www.laboratorberceanu.ro/'
                 ogUrl='https://www.laboratorberceanu.ro/'
                 ogType='website'

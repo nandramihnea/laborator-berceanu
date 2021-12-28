@@ -1,5 +1,5 @@
 .wrapper {
-    background: #FFEEEE;
+    background: #FAF9F7;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -14,13 +14,13 @@
 .wrapper::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0px 0px 10px 2px rgba(120, 10, 10,0.5);
-	background-color: #FFEEEE;
+	background-color: #FAF9F7;
 }
 
 .wrapper::-webkit-scrollbar
 {
 	width: 13px;
-	background-color: #FFEEEE;
+	background-color: #FAF9F7;
 }
 
 .wrapper::-webkit-scrollbar-thumb

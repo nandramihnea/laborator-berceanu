@@ -3,8 +3,9 @@ import React from 'react';
 
 import Apostoli from '../../assets/apostoli.pdf';
 import Teiului from '../../assets/teiului.pdf';
-import coverA from '../../assets/images/apostoli.png';
-import coverT from '../../assets/images/teiului.png';
+import coverA from '../../assets/images/apostoli.webp';
+import coverT from '../../assets/images/teiului.webp';
+
 
 const Acreditari = () => {
     return (
@@ -15,12 +16,16 @@ const Acreditari = () => {
             <div className={classes.wrapper + " grid justify-items-center"}>
                 <a href={Apostoli} target="_blank" rel="noopener noreferrer">
                     <img
+                        width='300'
+                        height='300'
                         src={coverA}
                         alt="acreditare laborator sf. apostoli petru si pavel"
                         className={classes.img} />
                 </a>
                 <a className="md:mt-4" href={Teiului} target="_blank" rel="noopener noreferrer">
                     <img
+                        width='300'
+                        height='300'
                         src={coverT}
                         alt="acreditare laborator teiului"
                         className={classes.img} />
