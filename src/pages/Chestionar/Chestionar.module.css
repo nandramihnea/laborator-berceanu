@@ -1,6 +1,12 @@
 .section {
     border-top: 3px solid #BA2525;
     min-height: 565px;
+    display: grid;
+}
+
+.chestionar {
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .buttons {
@@ -39,7 +45,6 @@
 	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
 }
-
 
 .inapoi {
     grid-column: 1;
@@ -88,16 +93,7 @@
         min-height: initial;
     }
 
-    .wrapper {
-        min-height: 10rem;
-    }
-
     .button {
         padding: 10px 20px;
-    }
-
-    .textarea {
-        font-size: 0.9rem;
-        height: 150px;
     }
 }
