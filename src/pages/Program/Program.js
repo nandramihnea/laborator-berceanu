@@ -17,7 +17,7 @@ const Program = () => {
                             <span>Luni - Vineri</span>
                             <span>7 — 15</span>
                         </div>
-                        <div className={classes.date + " text-lg md:text-base mb-4 text-neutral-0 opacity-90"}>
+                        <div className={classes.date + " text-lg md:text-base mb-4 text-neutral-0"}>
                             <span>* Program recoltare</span>
                             <span>7 — 11</span>
                         </div>
@@ -28,7 +28,7 @@ const Program = () => {
                             <span>Luni - Vineri</span>
                             <span>8 — 16</span>
                         </div>
-                        <div className={classes.date + " text-lg md:text-base mb-4 text-neutral-0 opacity-90"}>
+                        <div className={classes.date + " text-lg md:text-base mb-4 text-neutral-0"}>
                             <span>* Program recoltare</span>
                             <span>8 — 10:30</span>
                         </div>
