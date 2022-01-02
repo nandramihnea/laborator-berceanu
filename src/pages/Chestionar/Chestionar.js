@@ -53,9 +53,10 @@ const Chestionar = () => {
         <section id="chestionar" className={classes.section + ' bg-primary-3 relative'}>
             <div
                 className={classes.chestionar + ` pb-16 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6 tracking-wide ${shouldShowThankYou ? 'invisible' : undefined}`}>
-                    <p className="pb-28 md:pb-20 sm:pb-14 pt-24 md:pt-16 sm:pt-12 sm:mx-6 sm:text-xl text-3xl text-primary-0 tracking-wide text-right">
+                    {/* <div className='md:mb-14 mb-24 pb-16 w-4/5 md:w-auto mx-auto md:mx-12 sm:mx-6'></div> */}
+                    <h1 className="pb-28 md:pb-20 sm:pb-14 pt-24 md:pt-16 sm:pt-12 sm:mx-6 sm:text-xl text-3xl text-neutral-0 tracking-wide text-right">
                         Chestionar de satisfacție
-                    </p>
+                    </h1>
                     <form
                         action={EMAIL}
                         method="POST">
@@ -87,8 +88,8 @@ const Chestionar = () => {
                                 }
                             </div>
 
-                            <p className="text-primary-0 opacity-50 mt-8 text-center">{question + 1} din 6</p>
-                    </form>
+                    <p className="text-neutral-0 opacity-90 mt-8 text-center">{question + 1} din 6</p>
+                </form>
             </div>
             <ThankYou shouldShow={shouldShowThankYou} />
         </section>

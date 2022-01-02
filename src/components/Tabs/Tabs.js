@@ -22,12 +22,12 @@ const Tabs = ({selected, setSelectedItem, tabs, ...props}) => {
             {screenWidth > SCREEN_SIZE ?
             <ul className={classes.headers + " md:mr-4 bg-primary-3 px-6 py-12"}>
                 {tabs.map((tab, index) => {
-                    const isActive = selected === index ? '9' : '0';
+                    const isActive = selected === index ? 'text-primary-9' : 'text-primary-0';
 
                     return (
                         <li
                             key={tab}
-                            className={`text-xl md:text-base mb-4 text-primary-${isActive}`} >
+                            className={`text-xl md:text-base mb-4 ${isActive} tracking-wide font-medium`} >
                                 <span
                                     className="cursor-pointer"
                                     onClick={() => setSelectedItem(index)} >

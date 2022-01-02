@@ -4,6 +4,7 @@ import { HashLink } from 'react-router-hash-link';
 import { motion } from "framer-motion";
 
 import { HomeContext } from '../../../context/HomeContext';
+import classes from './NavItems.module.css';
 
 const NavItems = (props) => {
     const {isContactOpened, setIsContactOpened} = useContext(HomeContext);
@@ -36,49 +37,49 @@ const NavItems = (props) => {
                 initial='hidden'
                 whileHover='hover'
                 className={props.classes + ' p-4'} >
-                    <div onClick={handlePreturiClick} className="text-lg sm:text-base cursor-pointer">Prețuri</div>
+                    <div onClick={handlePreturiClick} className={classes.text + " text-lg sm:text-base cursor-pointer"}>Prețuri</div>
             </motion.li>
             <motion.li
                 variants={variants}
                 initial='hidden'
                 whileHover='hover'
                 className={props.classes + ' p-4'} >
-                    <div onClick={handleContactClick} className="text-lg sm:text-base cursor-pointer">Contact</div>
+                    <div onClick={handleContactClick} className={classes.text + " text-lg sm:text-base cursor-pointer"}>Contact</div>
             </motion.li>
             <motion.li
                 variants={variants}
                 initial='hidden'
                 whileHover='hover'
                 className={props.classes + ' p-4'} >
-                    <HashLink smooth to="#program" className="text-lg sm:text-base cursor-pointer">Program</HashLink>
+                    <HashLink smooth to="#program" className={classes.text + " text-lg sm:text-base cursor-pointer"}>Program</HashLink>
             </motion.li>
             <motion.li
                 variants={variants}
                 initial='hidden'
                 whileHover='hover'
                 className={props.classes + ' p-4'} >
-                    <HashLink smooth to='#acreditari' className="text-lg sm:text-base">Acreditări</HashLink>
+                    <HashLink smooth to='#acreditari' className={classes.text + " text-lg sm:text-base"}>Acreditări</HashLink>
             </motion.li>
             <motion.li
                 variants={variants}
                 initial='hidden'
                 whileHover='hover'
                 className={props.classes + ' p-4'} >
-                    <HashLink smooth to="#instructiuni-recoltare" className="text-lg sm:text-base cursor-pointer">Cum recoltăm?</HashLink>
+                    <HashLink smooth to="#instructiuni-recoltare" className={classes.text + " text-lg sm:text-base cursor-pointer"}>Cum recoltăm?</HashLink>
             </motion.li>
             <motion.li
                 variants={variants}
                 initial='hidden'
                 whileHover='hover'
                 className={props.classes + ' p-4'} >
-                    <HashLink smooth to="#rezultate" className="text-lg sm:text-base cursor-pointer">Rezultate</HashLink>
+                    <HashLink smooth to="#rezultate" className={classes.text + " text-lg sm:text-base cursor-pointer"}>Rezultate analize</HashLink>
             </motion.li>
             <motion.li
                 variants={variants}
                 initial='hidden'
                 whileHover='hover'
                 className={props.classes + ' p-4'} >
-                    <HashLink smooth to="#chestionar" className="text-lg sm:text-base cursor-pointer">Chestionar</HashLink>
+                    <HashLink smooth to="#chestionar" className={classes.text + " text-lg sm:text-base cursor-pointer"}>Chestionar</HashLink>
             </motion.li>
         </>
     )

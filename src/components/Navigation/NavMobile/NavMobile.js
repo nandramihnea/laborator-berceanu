@@ -25,7 +25,8 @@ const NavMobile = () => {
             animate={isOpened ? "open" : "closed"} >
                 <button
                     className={classes.button + ' bg-primary-8 p-5 cursor-pointer focus:outline-none'}
-                    onClick={() => setIsOpened(!isOpened)}>
+                    onClick={() => setIsOpened(!isOpened)}
+                    name="meniu" >
                         <svg width="23" height="19" className={classes.svg} viewBox="0 0 23 19">
                             <Path
                                 variants={{

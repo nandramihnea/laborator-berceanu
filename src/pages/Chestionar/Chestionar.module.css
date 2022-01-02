@@ -18,7 +18,7 @@
 .button {
     border: 2px solid #BA2525;
     padding: 12px 24px;
-    color: #FFEEEE;
+    color: #FAF9F7;
     cursor: pointer;
 	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
@@ -31,9 +31,9 @@
 }
 
 .submit {
-    border: 2px solid #FFEEEE;
+    border: 2px solid #FAF9F7;
     padding: 12px 24px;
-    color: #FFEEEE;
+    color: #FAF9F7;
     background: #BA2525;
     cursor: pointer;
 	-webkit-transition: all 0.2s;
@@ -52,6 +52,40 @@
 
 .inainte {
     grid-column: 2;
+}
+
+.wrapper {
+    min-height: 15rem;
+    align-content: center;
+    justify-items: center;
+}
+
+.textarea {
+    height: 250px;
+    width: 100%;
+    resize: none;
+    padding: 24px;
+    outline: none;
+    border: 1px solid #A61B1B;
+    color: #FAF9F7;
+    font-size: 1.2rem;
+}
+
+.nume {
+    outline: none;
+    color: #FAF9F7;
+    text-align: center;
+    text-transform: capitalize;
+    border-bottom: 2px solid #911111;
+}
+
+.nume:after {
+    content: '';
+    height: 30%;
+    width: 3px;
+    display: block;
+    transition: all 0.3s ease-out;
+    background-color: #D64545;
 }
 
 @media (max-width: 670px) {
