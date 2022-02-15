@@ -1,9 +1,8 @@
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
+  purge: {
+    content: ["./src/**/*.js", "./src/**/*.jsx", "./public/index.html"],
+    enabled: process.env.NODE_ENV === 'production'
   },
-  purge: ["./src/**/*.js"],
   theme: {
     colors: {
       primary: {
