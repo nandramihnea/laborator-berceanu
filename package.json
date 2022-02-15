@@ -23,13 +23,12 @@
     "tailwindcss": "^2.0.2"
   },
   "scripts": {
-    "build:css-dev": "postcss src/tailwind.css -o src/tailwind.output.css",
-    "build:css-prod": "cross-env NODE_ENV=production postcss src/tailwind.css -o public/tailwind.output.min.css",
     "start": "react-scripts start",
-    "build:project": "react-scripts build",
+    "prod": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build": "npm-run-all build:css-prod build:project"
+    "style": "cross-env NODE_ENV=production postcss src/tailwind.css -o src/tailwind.output.min.css",
+    "build": "npm-run-all style prod"
   },
   "eslintConfig": {
     "extends": "react-app"
