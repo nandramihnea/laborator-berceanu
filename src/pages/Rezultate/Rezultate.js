@@ -30,12 +30,15 @@ const Rezultate = () => {
                         În rubrica <span className="italic text-primary-3">Logare pacienti</span>, introduceți datele dumneavoastră</p>
                     <p><span className="font-bold text-primary-3 ml-12 md:ml-6">* Codul de securitate</span> îl primiți după efectuarea analizelor</p>
                 </div>
-                <img
-                    width='300'
-                    height='300'
-                    className={classes.img + " opacity-75"}
-                    src={source}
-                    alt="login" />
+                <div>
+                    <img
+                        width='300'
+                        height='300'
+                        className={classes.img + " opacity-75"}
+                        src={source}
+                        alt="login" />
+                    <span className='text-xs opacity-50'>imagine preluată de pe https://rezultate.smartlabs.ro/</span>
+                </div>
             </div>
         </section>
     )
